@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.database.table-registry",
+  "tables": [
+    {
+      "table_name": "ddz_match",
+      "owner": "sdkwork-doudizhu",
+      "compliance_level": "L2",
+      "lifecycle_status": "active"
+    },
+    {
+      "table_name": "ddz_room",
+      "owner": "sdkwork-doudizhu",
+      "compliance_level": "L2",
+      "lifecycle_status": "active"
+    },
+    {
+      "table_name": "ddz_leaderboard",
+      "owner": "sdkwork-doudizhu",
+      "compliance_level": "L2",
+      "lifecycle_status": "active"
+    }
+  ]
+}

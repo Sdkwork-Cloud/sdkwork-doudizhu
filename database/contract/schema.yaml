@@ -1,0 +1,19 @@
+schema_version: 1
+kind: sdkwork.database.schema
+module_id: doudizhu
+contract_version: 1.0.0
+owner_team: sdkwork-doudizhu
+compliance_level: L2
+engines:
+  - postgres
+table_prefix: ddz_
+tables:
+  - name: ddz_match
+    lifecycle_status: active
+    owner: sdkwork-doudizhu
+  - name: ddz_room
+    lifecycle_status: active
+    owner: sdkwork-doudizhu
+  - name: ddz_leaderboard
+    lifecycle_status: active
+    owner: sdkwork-doudizhu

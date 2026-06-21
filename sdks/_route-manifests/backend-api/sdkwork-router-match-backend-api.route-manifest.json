@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.route.manifest",
+  "packageName": "sdkwork-router-match-backend-api",
+  "surface": "backend-api",
+  "owner": "sdkwork-doudizhu",
+  "domain": "game",
+  "capability": "match",
+  "apiAuthority": "sdkwork-doudizhu-backend-api",
+  "sdkFamily": "sdkwork-doudizhu-backend-sdk",
+  "prefix": "/backend/v3/api",
+  "source": {
+    "crateRoot": "crates/sdkwork-router-match-backend-api",
+    "crateImport": "sdkwork_router_match_backend_api",
+    "openapiAuthority": "apis/backend-api/game/doudizhu-backend-api.openapi.json"
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/backend/v3/api/doudizhu/matches",
+      "operationId": "backend.doudizhu.match.list",
+      "tags": ["doudizhu"],
+      "requestContext": "WebRequestContext",
+      "apiSurface": "backend-api",
+      "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
+      "handler": { "module": "crate", "name": "backend_doudizhu_match_list" },
+      "schemas": { "request": null, "response": "DoudizhuApiResult", "problem": "ProblemDetail" },
+      "ownership": { "owner": "sdkwork-doudizhu", "apiAuthority": "sdkwork-doudizhu-backend-api" },
+      "source": { "file": "apis/backend-api/game/doudizhu-backend-api.openapi.json" }
+    }
+  ]
+}

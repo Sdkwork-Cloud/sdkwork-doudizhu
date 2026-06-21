@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.app.config",
+  "app": {
+    "name": "sdkwork-doudizhu",
+    "displayName": "SDKWork Doudizhu",
+    "version": "0.1.0",
+    "description": "SDKWork doudizhu platform for matches, rooms, and leaderboards",
+    "owner": "sdkwork-doudizhu",
+    "domain": "game",
+    "capability": "match"
+  },
+  "runtime": {
+    "apiBaseUrl": "http://localhost:8096",
+    "appApiPrefix": "/app/v3/api",
+    "backendApiPrefix": "/backend/v3/api",
+    "supportedDeploymentProfiles": ["standalone", "cloud"],
+    "defaultDeploymentProfile": "standalone"
+  },
+  "sdk": {
+    "appApiAuthority": "sdkwork-doudizhu-app-api",
+    "backendApiAuthority": "sdkwork-doudizhu-backend-api",
+    "appSdkFamily": "sdkwork-doudizhu-app-sdk",
+    "backendSdkFamily": "sdkwork-doudizhu-backend-sdk"
+  },
+  "sdkDependencies": [],
+  "dependencyApiExports": [],
+  "dependencyApiSurfaces": [],
+  "features": {
+    "match": true,
+    "rooms": true,
+    "leaderboards": true
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "sdkwork-doudizhu-backend-sdk",
+    "version": "0.1.0",
+    "language": "typescript",
+    "sdkType": "backend",
+    "protocol": "http",
+    "packageName": "@sdkwork-internal/doudizhu-backend-sdk-generated"
+  },
+  "generatedFiles": [
+    {
+      "path": "bin/publish-core.mjs",
+      "sha256": "98ad0918a78bfbe22bf8f12fec709b0bed545b9e01edd40f5e4abf31a23378a5"
+    },
+    {
+      "path": "bin/publish.ps1",
+      "sha256": "78c6419400b988409d9393c2ecd85aa02dd6760f73edb3cc84cb28fefc51b41e"
+    },
+    {
+      "path": "bin/publish.sh",
+      "sha256": "899087c23e670b6951a12a13490fd557f761c96d78fabfb7e58a37e367db889f"
+    },
+    {
+      "path": "bin/sdk-gen.bat",
+      "sha256": "1fa0948b506e5deecf73be9371db39a042e48555d018292334fa0004a897fcbe"
+    },
+    {
+      "path": "bin/sdk-gen.sh",
+      "sha256": "215c7192b3f5891efebd79d6e2938a520ac6c9c6eb6b64979371c1ee7a58fd3d"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "fb941a0806986a54fc192f98a98f6d9c282b8d350b2b19a3e71dda404e92d545"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7840cc7d2b36ff364ac16c2fc5ec15b861bfe96854eecf81fb59b00edb8b1447"
+    },
+    {
+      "path": "package.json",
+      "sha256": "5d08256104d91fe67060dcee7016aa0ae4c302494730da0dbff75b2c57861ee0"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a17eb8b8fd490f9a3d065f55905280c0fcc2b911fcdfb37cde00615f986cead0"
+    },
+    {
+      "path": "sdkwork-sdk.json",
+      "sha256": "756d813e119cc89f9222f35f870e04362c3b0044d29bda77dee1a7062dafe6a9"
+    },
+    {
+      "path": "src/api/base.ts",
+      "sha256": "02ad25e6bf331ff241ba387c2947ddf1900dd849038e08c2757416a3aa788a04"
+    },
+    {
+      "path": "src/api/doudizhu.ts",
+      "sha256": "1971d0ca4d2e9c4b8f4d72c52dea54f3b618b7e6d5d5be10a83a24013c4743bd"
+    },
+    {
+      "path": "src/api/index.ts",
+      "sha256": "ed065de68bd1123228801e9a951d1ca0cfbe12cc3a740c0c0b65515af5d57187"
+    },
+    {
+      "path": "src/api/paths.ts",
+      "sha256": "fb06a3db13e96bb5b349ddc1831aa6d350c17b09d05ea92a36438131140f666e"
+    },
+    {
+      "path": "src/auth/index.ts",
+      "sha256": "657fc63738bdcd61d83133120732a477dd127448cf2c51229b05d21f5e1f5c04"
+    },
+    {
+      "path": "src/http/client.ts",
+      "sha256": "1d339275acee6ec54660a32eb9effcc718ebf0992c5e9bfdb80a3452e0702137"
+    },
+    {
+      "path": "src/http/index.ts",
+      "sha256": "fc204fbe89750b9d25ecaffe41003e6ac243a1a895b65e65856202ab825d2dbe"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "a2e99c0c05b8f94efc5e74090dbb5939f671b4819b5b7a7750a21e789f445d87"
+    },
+    {
+      "path": "src/sdk.ts",
+      "sha256": "d33fc088d15694cfcb2f71db331217a51906d574bf8b708e7881c0b061893f2d"
+    },
+    {
+      "path": "src/types/common.ts",
+      "sha256": "351d721c3c6f48f4453f92276856105120d72eb8d2fa9cd28de8e3854bf10f6c"
+    },
+    {
+      "path": "src/types/doudizhu-api-result.ts",
+      "sha256": "7ec470ae2ac555ac9935789b989c3f688f59b0bf7a63f9e9d7393600e4b5a7f9"
+    },
+    {
+      "path": "src/types/doudizhu-health-response.ts",
+      "sha256": "dd3160ba23644e6f7824a748a09faf14449cb217e91b07cf2f8fadbf91e85598"
+    },
+    {
+      "path": "src/types/doudizhu-match-item.ts",
+      "sha256": "903b8c2b5db05043c2d3049ffd6d065519d3a3e38ed9d03abb1c394d462844ff"
+    },
+    {
+      "path": "src/types/doudizhu-match-page.ts",
+      "sha256": "6625aa21fe290f47891d0d635b4a688ed1c3b5c6c1aa8c44b51a6dfb7d3b2ffd"
+    },
+    {
+      "path": "src/types/index.ts",
+      "sha256": "2e670715fdff3f870385eaee70c507b666e09b6dbc7c9e2eadec76efcf683644"
+    },
+    {
+      "path": "src/types/problem-detail.ts",
+      "sha256": "46b7995d1fe77bd7511e83e69fef6a0afaf697d0a0b612d651af5591854453cf"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "7c8a6c2b00fb208ec28e1e6045194487d1b3e563d6c44cef4783fd4fe0e8ffad"
+    }
+  ],
+  "scaffoldFiles": [
+    "custom/build-runtime.mjs",
+    "custom/README.md"
+  ],
+  "customRoots": [
+    "custom/"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.route.manifest",
+  "packageName": "sdkwork-router-match-app-api",
+  "surface": "app-api",
+  "owner": "sdkwork-doudizhu",
+  "domain": "game",
+  "capability": "match",
+  "apiAuthority": "sdkwork-doudizhu-app-api",
+  "sdkFamily": "sdkwork-doudizhu-app-sdk",
+  "prefix": "/app/v3/api",
+  "source": {
+    "crateRoot": "crates/sdkwork-router-match-app-api",
+    "crateImport": "sdkwork_router_match_app_api",
+    "openapiAuthority": "apis/app-api/game/doudizhu-app-api.openapi.json"
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/app/v3/api/doudizhu/matches",
+      "operationId": "doudizhu.match.list",
+      "tags": ["doudizhu"],
+      "requestContext": "WebRequestContext",
+      "apiSurface": "app-api",
+      "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
+      "handler": { "module": "crate", "name": "doudizhu_match_list" },
+      "schemas": { "request": null, "response": "DoudizhuApiResult", "problem": "ProblemDetail" },
+      "ownership": { "owner": "sdkwork-doudizhu", "apiAuthority": "sdkwork-doudizhu-app-api" },
+      "source": { "file": "apis/app-api/game/doudizhu-app-api.openapi.json" }
+    },
+    {
+      "method": "GET",
+      "path": "/app/v3/api/doudizhu/matches/{matchId}",
+      "operationId": "doudizhu.match.retrieve",
+      "tags": ["doudizhu"],
+      "requestContext": "WebRequestContext",
+      "apiSurface": "app-api",
+      "auth": { "mode": "dual-token", "required": true, "tenantScope": "tenant", "dataScope": "organization" },
+      "handler": { "module": "crate", "name": "doudizhu_match_retrieve" },
+      "schemas": { "request": null, "response": "DoudizhuApiResult", "problem": "ProblemDetail" },
+      "ownership": { "owner": "sdkwork-doudizhu", "apiAuthority": "sdkwork-doudizhu-app-api" },
+      "source": { "file": "apis/app-api/game/doudizhu-app-api.openapi.json" }
+    }
+  ]
+}

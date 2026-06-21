@@ -1,0 +1,16 @@
+[package]
+name = "sdkwork-router-match-backend-api"
+version.workspace = true
+edition.workspace = true
+license = "Apache-2.0"
+description = "SDKWork doudizhu match backend-api router."
+
+[lib]
+name = "sdkwork_router_match_backend_api"
+path = "src/lib.rs"
+
+[dependencies]
+axum.workspace = true
+sdkwork_game_match_service.workspace = true
+sdkwork-router-match-app-api = { path = "../sdkwork-router-match-app-api" }
+sdkwork-web-axum.workspace = true

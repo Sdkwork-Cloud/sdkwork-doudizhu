@@ -1,0 +1,20 @@
+[package]
+name = "sdkwork-game-match-repository-sqlx"
+version.workspace = true
+edition.workspace = true
+license = "Apache-2.0"
+description = "SQLx repository for SDKWork doudizhu match domain."
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+async-trait.workspace = true
+sdkwork_game_match_service.workspace = true
+sdkwork-utils-rust.workspace = true
+sdkwork-database-sqlx.workspace = true
+serde.workspace = true
+sqlx.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true

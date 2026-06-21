@@ -1,0 +1,40 @@
+{
+  "workspace": "sdkwork-doudizhu-backend-sdk",
+  "title": "SDKWork Doudizhu Backend API SDK",
+  "apiVersion": "0.1.0",
+  "openapiVersion": "3.1.2",
+  "authoritySpec": "../../apis/backend-api/game/doudizhu-backend-api.openapi.json",
+  "generationInputSpec": "../../apis/backend-api/game/doudizhu-backend-api.openapi.json",
+  "derivedSpecs": {
+    "default": "../../apis/backend-api/game/doudizhu-backend-api.openapi.json"
+  },
+  "apiAuthority": "sdkwork-doudizhu-backend-api",
+  "discoverySurface": {
+    "sdkTarget": "backend",
+    "apiPrefix": "/backend/v3/api",
+    "schemaUrl": "/backend/v3/openapi.json",
+    "generatedProtocols": ["http-openapi"],
+    "manualTransports": []
+  },
+  "languages": [
+    {
+      "language": "typescript",
+      "workspace": "sdkwork-doudizhu-backend-sdk-typescript",
+      "generationState": "declared",
+      "releaseState": "not_published",
+      "generatedPath": "sdkwork-doudizhu-backend-sdk-typescript/generated/server-openapi",
+      "manifestPath": "sdkwork-doudizhu-backend-sdk-typescript/generated/server-openapi/package.json",
+      "name": "@sdkwork-internal/doudizhu-backend-sdk-generated",
+      "version": "0.1.0",
+      "description": "Generator-owned TypeScript transport SDK for sdkwork-doudizhu backend API.",
+      "consumerSurface": {
+        "primaryClient": "SdkworkDoudizhuBackendClient",
+        "apiPrefix": "/backend/v3/api"
+      }
+    }
+  ],
+  "sdkOwner": "sdkwork-doudizhu",
+  "sdkDependencies": [],
+  "dependencyApiExports": [],
+  "dependencyApiSurfaces": []
+}

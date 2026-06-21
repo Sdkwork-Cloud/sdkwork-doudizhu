@@ -1,0 +1,18 @@
+# Cloud profile API server image (reference).
+# Build from repository root: docker build -f deployments/docker/Dockerfile.doudizhu-api .
+
+FROM rust:1-bookworm AS builder
+WORKDIR /build
+COPY . .
+RUN cargo build --release -p sdkwork-doudizhu-api-server
+
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY --from=builder /build/target/release/sdkwork-doudizhu-api-server /app/sdkwork-doudizhu-api-server
+COPY database /app/database
+COPY sdkwork.app.config.json /app/sdkwork.app.config.json
+ENV SDKWORK_DOUDIZHU_APP_ROOT=/app
+ENV DOUDIZHU_API_BIND=0.0.0.0:8096
+EXPOSE 8096
+CMD ["/app/sdkwork-doudizhu-api-server"]

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.route.manifest",
+  "packageName": "sdkwork-router-health-app-api",
+  "surface": "app-api",
+  "owner": "sdkwork-doudizhu",
+  "domain": "game",
+  "capability": "health",
+  "apiAuthority": "sdkwork-doudizhu-app-api",
+  "sdkFamily": "sdkwork-doudizhu-app-sdk",
+  "prefix": "/",
+  "source": {
+    "crateRoot": "crates/sdkwork-router-health-app-api",
+    "crateImport": "sdkwork_router_health_app_api",
+    "openapiAuthority": "apis/app-api/game/doudizhu-app-api.openapi.json"
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/app/v3/api/system/health",
+      "operationId": "doudizhu.health.check",
+      "tags": ["health"],
+      "requestContext": "WebRequestContext",
+      "apiSurface": "app-api",
+      "auth": { "mode": "public" },
+      "handler": { "module": "crate", "name": "doudizhu_health_check" },
+      "schemas": { "request": null, "response": "DoudizhuHealthResponse", "problem": "ProblemDetail" },
+      "ownership": { "owner": "sdkwork-doudizhu", "apiAuthority": "sdkwork-doudizhu-app-api" },
+      "source": { "file": "apis/app-api/game/doudizhu-app-api.openapi.json" }
+    },
+    {
+      "method": "GET",
+      "path": "/app/v3/api/system/ready",
+      "operationId": "doudizhu.ready.check",
+      "tags": ["health"],
+      "requestContext": "WebRequestContext",
+      "apiSurface": "app-api",
+      "auth": { "mode": "public" },
+      "handler": { "module": "crate", "name": "doudizhu_ready_check" },
+      "schemas": { "request": null, "response": "DoudizhuHealthResponse", "problem": "ProblemDetail" },
+      "ownership": { "owner": "sdkwork-doudizhu", "apiAuthority": "sdkwork-doudizhu-app-api" },
+      "source": { "file": "apis/app-api/game/doudizhu-app-api.openapi.json" }
+    }
+  ]
+}

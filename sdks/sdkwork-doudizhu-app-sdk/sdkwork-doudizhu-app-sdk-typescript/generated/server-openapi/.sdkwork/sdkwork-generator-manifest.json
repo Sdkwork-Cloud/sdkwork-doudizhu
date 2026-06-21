@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "generator": "@sdkwork/sdk-generator",
+  "sdk": {
+    "name": "sdkwork-doudizhu-app-sdk",
+    "version": "0.1.0",
+    "language": "typescript",
+    "sdkType": "app",
+    "protocol": "http",
+    "packageName": "@sdkwork-internal/doudizhu-app-sdk-generated"
+  },
+  "generatedFiles": [
+    {
+      "path": "bin/publish-core.mjs",
+      "sha256": "98ad0918a78bfbe22bf8f12fec709b0bed545b9e01edd40f5e4abf31a23378a5"
+    },
+    {
+      "path": "bin/publish.ps1",
+      "sha256": "78c6419400b988409d9393c2ecd85aa02dd6760f73edb3cc84cb28fefc51b41e"
+    },
+    {
+      "path": "bin/publish.sh",
+      "sha256": "899087c23e670b6951a12a13490fd557f761c96d78fabfb7e58a37e367db889f"
+    },
+    {
+      "path": "bin/sdk-gen.bat",
+      "sha256": "2d56891dc8276339ebbffc78ada3cc1bf73e2831453da89d95fcd2277bb4a05b"
+    },
+    {
+      "path": "bin/sdk-gen.sh",
+      "sha256": "c9bab3f87d5327833ca9a392f6b8e6b6d3386a46836cc3c48ef48313b603bd90"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "fb941a0806986a54fc192f98a98f6d9c282b8d350b2b19a3e71dda404e92d545"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7840cc7d2b36ff364ac16c2fc5ec15b861bfe96854eecf81fb59b00edb8b1447"
+    },
+    {
+      "path": "package.json",
+      "sha256": "86e7f788d82c8352afa0e573e17e42d3d7b0f8761314fbf6dc04b51548862293"
+    },
+    {
+      "path": "README.md",
+      "sha256": "439499fdf0387c6e88750e88c1ac860f6baa03733291702edac0a9659ca59511"
+    },
+    {
+      "path": "sdkwork-sdk.json",
+      "sha256": "91a851a2cc34d0c03f7ba036948003eedf37f5eeca81e1ff24a8dc29c7816dba"
+    },
+    {
+      "path": "src/api/base.ts",
+      "sha256": "02ad25e6bf331ff241ba387c2947ddf1900dd849038e08c2757416a3aa788a04"
+    },
+    {
+      "path": "src/api/doudizhu.ts",
+      "sha256": "b77bf925538708866e991564ca4e118e4de2cee9a1b1b11bab49132c8fe6d653"
+    },
+    {
+      "path": "src/api/health.ts",
+      "sha256": "2e799bf0150aa492629ce5650a8d04774f0fe7716d1292e766cd826a5a1cb288"
+    },
+    {
+      "path": "src/api/index.ts",
+      "sha256": "5d6231852b9fe78603e957da8a0cc5dcaa94ed47d2698173bfed738e07221953"
+    },
+    {
+      "path": "src/api/paths.ts",
+      "sha256": "4ffed7b7d576dc11081bf6b43511465d3a5db410bd25c425ef47b69b154981ad"
+    },
+    {
+      "path": "src/auth/index.ts",
+      "sha256": "657fc63738bdcd61d83133120732a477dd127448cf2c51229b05d21f5e1f5c04"
+    },
+    {
+      "path": "src/http/client.ts",
+      "sha256": "7c5521163579261418c56e8126b0389dd78be9e0931e5e6064749c7cc9df0edc"
+    },
+    {
+      "path": "src/http/index.ts",
+      "sha256": "fc204fbe89750b9d25ecaffe41003e6ac243a1a895b65e65856202ab825d2dbe"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "0e2aa4f88f5268b835be0e069e6b7e8c36d00a77438dd18b50e8774b463a785e"
+    },
+    {
+      "path": "src/sdk.ts",
+      "sha256": "2728c5a32b83570892cefbbc1275e23b3bba63a232a9c383ccc3e3f697662dcc"
+    },
+    {
+      "path": "src/types/common.ts",
+      "sha256": "d2506be8c4bdbe8e7059393467e6e71d75ef1d8c018dbf997bb0ab2a77b6c7b6"
+    },
+    {
+      "path": "src/types/doudizhu-api-result.ts",
+      "sha256": "7ec470ae2ac555ac9935789b989c3f688f59b0bf7a63f9e9d7393600e4b5a7f9"
+    },
+    {
+      "path": "src/types/doudizhu-health-response.ts",
+      "sha256": "dd3160ba23644e6f7824a748a09faf14449cb217e91b07cf2f8fadbf91e85598"
+    },
+    {
+      "path": "src/types/doudizhu-match-item.ts",
+      "sha256": "903b8c2b5db05043c2d3049ffd6d065519d3a3e38ed9d03abb1c394d462844ff"
+    },
+    {
+      "path": "src/types/doudizhu-match-page.ts",
+      "sha256": "6625aa21fe290f47891d0d635b4a688ed1c3b5c6c1aa8c44b51a6dfb7d3b2ffd"
+    },
+    {
+      "path": "src/types/index.ts",
+      "sha256": "2e670715fdff3f870385eaee70c507b666e09b6dbc7c9e2eadec76efcf683644"
+    },
+    {
+      "path": "src/types/problem-detail.ts",
+      "sha256": "46b7995d1fe77bd7511e83e69fef6a0afaf697d0a0b612d651af5591854453cf"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "7c8a6c2b00fb208ec28e1e6045194487d1b3e563d6c44cef4783fd4fe0e8ffad"
+    }
+  ],
+  "scaffoldFiles": [
+    "custom/build-runtime.mjs",
+    "custom/README.md"
+  ],
+  "customRoots": [
+    "custom/"
+  ]
+}
