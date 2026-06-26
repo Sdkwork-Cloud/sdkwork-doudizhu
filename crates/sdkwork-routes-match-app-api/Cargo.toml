@@ -1,12 +1,12 @@
 [package]
-name = "sdkwork-router-match-app-api"
+name = "sdkwork-routes-match-app-api"
 version.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
 description = "SDKWork doudizhu match app-api router."
 
 [lib]
-name = "sdkwork_router_match_app_api"
+name = "sdkwork_routes_match_app_api"
 path = "src/lib.rs"
 
 [dependencies]

@@ -16,4 +16,4 @@ pnpm sdk:build
 pnpm sdk:generate:check
 ```
 
-Route manifests live under `sdks/_route-manifests/` and are owned by `sdkwork-router-*` crates.
+Route manifests live under `sdks/_route-manifests/` and are owned by `sdkwork-routes-*` crates.

@@ -1,7 +1,7 @@
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
 use sdkwork_doudizhu_api_server::{build_memory_match_service, with_doudizhu_app_request_context};
-use sdkwork_router_match_app_api::build_match_app_router;
+use sdkwork_routes_match_app_api::build_match_app_router;
 use tower::ServiceExt;
 
 const DEV_AUTH_TOKEN: &str =

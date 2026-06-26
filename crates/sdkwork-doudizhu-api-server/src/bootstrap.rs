@@ -7,9 +7,9 @@ use sdkwork_game_match_repository_sqlx::{
     SqlxGameMatchRepository,
 };
 use sdkwork_game_match_service::GameMatchService;
-use sdkwork_router_health_app_api::build_health_router;
-use sdkwork_router_match_app_api::{build_match_app_router, MatchStore};
-use sdkwork_router_match_backend_api::build_match_backend_router;
+use sdkwork_routes_health_app_api::build_health_router;
+use sdkwork_routes_match_app_api::{build_match_app_router, MatchStore};
+use sdkwork_routes_match_backend_api::build_match_backend_router;
 use tower_http::cors::CorsLayer;
 
 use crate::{with_doudizhu_app_request_context, with_doudizhu_backend_request_context};

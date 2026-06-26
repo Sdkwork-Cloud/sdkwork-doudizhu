@@ -3,7 +3,7 @@ use axum::response::Response;
 use axum::routing::get;
 use axum::Router;
 use sdkwork_game_match_service::GameMatchRepository;
-use sdkwork_router_match_app_api::{respond_list, MatchListQuery, MatchStore};
+use sdkwork_routes_match_app_api::{respond_list, MatchListQuery, MatchStore};
 use sdkwork_web_axum::RequirePrincipal;
 
 use crate::paths::BACKEND_MATCH_LIST_PATH;
