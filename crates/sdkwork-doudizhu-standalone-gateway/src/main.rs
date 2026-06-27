@@ -1,4 +1,4 @@
-use sdkwork_doudizhu_api_server::{build_match_service, build_router};
+use sdkwork_doudizhu_standalone_gateway::{build_match_service, build_router};
 use sdkwork_utils_rust::optional::default_if_blank;
 
 #[tokio::main]
@@ -24,9 +24,9 @@ async fn main() {
     let app = build_router(store);
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
-        .expect("bind doudizhu api-server listener failed");
-    tracing::info!("sdkwork-doudizhu-api-server listening on {bind_address}");
+        .expect("bind doudizhu standalone-gateway listener failed");
+    tracing::info!("sdkwork-doudizhu-standalone-gateway listening on {bind_address}");
     axum::serve(listener, app)
         .await
-        .expect("serve doudizhu api-server failed");
+        .expect("serve doudizhu standalone-gateway failed");
 }

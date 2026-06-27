@@ -10,3 +10,7 @@ target/
 .env.postgres
 *.local.toml
 *.zip
+
+# SDKWork local runtime state
+.runtime/
+**/.runtime/

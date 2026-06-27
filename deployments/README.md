@@ -22,4 +22,4 @@ Deployment descriptors and packaging handoff for `sdkwork-doudizhu`.
 ## Packaging
 
 - GitHub workflow: `sdkwork.workflow.json` + `.github/workflows/package.yml`
-- Release artifact: `target/release/sdkwork-doudizhu-api-server`
+- Release artifact: `target/release/sdkwork-doudizhu-standalone-gateway`

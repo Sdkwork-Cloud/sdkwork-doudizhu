@@ -1,6 +1,6 @@
 use axum::body::Body;
 use axum::http::{Request, StatusCode};
-use sdkwork_doudizhu_api_server::{build_memory_match_service, with_doudizhu_app_request_context};
+use sdkwork_doudizhu_standalone_gateway::{build_memory_match_service, with_doudizhu_app_request_context};
 use sdkwork_routes_match_app_api::build_match_app_router;
 use tower::ServiceExt;
 
@@ -49,7 +49,7 @@ async fn match_router_accepts_dev_inline_dual_tokens() {
 
 #[tokio::test]
 async fn build_router_merges_health_and_match_routes() {
-    let router = sdkwork_doudizhu_api_server::build_router(build_memory_match_service());
+    let router = sdkwork_doudizhu_standalone_gateway::build_router(build_memory_match_service());
 
     for uri in [
         "/app/v3/api/system/health",
