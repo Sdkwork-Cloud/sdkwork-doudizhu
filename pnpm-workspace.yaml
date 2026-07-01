@@ -1,9 +1,11 @@
 packages:
+  - "apps/sdkwork-doudizhu-common"
+  - "apps/sdkwork-doudizhu-common/packages/*"
+  - "apps/sdkwork-doudizhu-pc"
+  - "apps/sdkwork-doudizhu-pc/packages/*"
   - "sdks/*"
   - "sdks/sdkwork-doudizhu-app-sdk/sdkwork-doudizhu-app-sdk-typescript/generated/server-openapi"
   - "sdks/sdkwork-doudizhu-backend-sdk/sdkwork-doudizhu-backend-sdk-typescript/generated/server-openapi"
-  - "packages/common/doudizhu/*"
-  - "apps/sdkwork-doudizhu-pc/packages/*"
   - "../sdkwork-utils/packages/sdkwork-utils-typescript"
 
 catalog:

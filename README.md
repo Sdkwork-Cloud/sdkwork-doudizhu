@@ -1,4 +1,5 @@
 # SDKWork Doudizhu
+repository-kind: application
 
 SDKWork doudizhu (斗地主) application root. Provides match, room, and leaderboard capabilities aligned with `../sdkwork-specs`.
 
