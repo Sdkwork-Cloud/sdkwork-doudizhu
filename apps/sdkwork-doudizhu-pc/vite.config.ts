@@ -5,7 +5,7 @@ import { defineConfig, loadEnv } from 'vite';
 
 const doudizhuAppSdkRoot = path.resolve(
   __dirname,
-  '../../sdks/sdkwork-doudizhu-app-sdk/sdkwork-doudizhu-app-sdk-typescript/generated/server-openapi',
+  '../../sdks/sdkwork-doudizhu-app-sdk/sdkwork-doudizhu-app-sdk-typescript/src/index.ts',
 );
 
 export default defineConfig(({ mode }) => {

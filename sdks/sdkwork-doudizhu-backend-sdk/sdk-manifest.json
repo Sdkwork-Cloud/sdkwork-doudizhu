@@ -1,4 +1,15 @@
 {
+  "schemaVersion": 1,
+  "sdkFamily": "sdkwork-doudizhu-backend-sdk",
+  "sdkName": "sdkwork-doudizhu-backend-sdk",
+  "packageName": "@sdkwork/doudizhu-backend-sdk",
+  "transportPackageName": "sdkwork-doudizhu-backend-sdk-generated-typescript",
+  "typescript": {
+    "composedRoot": "sdkwork-doudizhu-backend-sdk-typescript",
+    "composedEntry": "sdkwork-doudizhu-backend-sdk-typescript/src/index.ts",
+    "transportRoot": "sdkwork-doudizhu-backend-sdk-typescript/generated/server-openapi",
+    "transportEntry": "sdkwork-doudizhu-backend-sdk-typescript/generated/server-openapi/src/index.ts"
+  },
   "workspace": "sdkwork-doudizhu-backend-sdk",
   "title": "SDKWork Doudizhu Backend API SDK",
   "apiVersion": "0.1.0",
@@ -8,14 +19,18 @@
   "derivedSpecs": {
     "default": "../../apis/backend-api/game/doudizhu-backend-api.openapi.json"
   },
+  "sdkOwner": "sdkwork-doudizhu",
   "apiAuthority": "sdkwork-doudizhu-backend-api",
   "discoverySurface": {
     "sdkTarget": "backend",
     "apiPrefix": "/backend/v3/api",
     "schemaUrl": "/backend/v3/openapi.json",
-    "generatedProtocols": ["http-openapi"],
+    "generatedProtocols": [
+      "http-openapi"
+    ],
     "manualTransports": []
   },
+  "sdkDependencies": [],
   "languages": [
     {
       "language": "typescript",
@@ -30,11 +45,9 @@
       "consumerSurface": {
         "primaryClient": "SdkworkDoudizhuBackendClient",
         "apiPrefix": "/backend/v3/api"
-      }
+      },
+      "consumerPackageName": "@sdkwork/doudizhu-backend-sdk",
+      "transportPackageName": "sdkwork-doudizhu-backend-sdk-generated-typescript"
     }
-  ],
-  "sdkOwner": "sdkwork-doudizhu",
-  "sdkDependencies": [],
-  "dependencyApiExports": [],
-  "dependencyApiSurfaces": []
+  ]
 }

@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "language": "typescript",
   "sdkType": "app",
-  "packageName": "@sdkwork-internal/doudizhu-app-sdk-generated",
+  "packageName": "sdkwork-doudizhu-app-sdk-generated-typescript",
   "generator": "@sdkwork/sdk-generator",
   "capabilities": {
     "supportsGeneratedTests": true,
@@ -26,5 +26,7 @@
     "stateRoots": [
       ".sdkwork/"
     ]
-  }
+  },
+  "transportPackageName": "sdkwork-doudizhu-app-sdk-generated-typescript",
+  "consumerPackageName": "@sdkwork/doudizhu-app-sdk"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@sdkwork-internal/doudizhu-backend-sdk-generated",
+  "name": "sdkwork-doudizhu-backend-sdk-generated-typescript",
   "version": "0.1.0",
   "private": true,
   "description": "Generator-owned TypeScript transport SDK for sdkwork-doudizhu-backend-sdk.",
@@ -37,5 +37,6 @@
     "api",
     "backend",
     "sdkwork"
-  ]
+  ],
+  "sdkworkRole": "transport"
 }

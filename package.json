@@ -21,7 +21,7 @@
     "sdk:generate:check": "node tools/doudizhu_sdk_generate.mjs --check",
     "sdk:check": "node tools/doudizhu_sdk_generate.mjs --check",
     "sdk:generate": "node tools/doudizhu_sdk_generate.mjs",
-    "sdk:build": "pnpm --filter @sdkwork-internal/doudizhu-app-sdk-generated build",
+    "sdk:build": "pnpm --filter @sdkwork/doudizhu-app-sdk build",
     "db:materialize:contract": "node ../sdkwork-specs/tools/materialize-database-contract-from-baseline.mjs --root . --baseline database/ddl/baseline/postgres/0001_doudizhu_baseline.sql --module-id doudizhu --owner sdkwork-doudizhu --prefixes ddz_ --engines postgres",
     "db:validate": "node ../sdkwork-specs/tools/check-database-framework-standard.mjs --root .",
     "db:plan": "cargo run --manifest-path ../sdkwork-database/Cargo.toml -p sdkwork-database-cli -- --app-root . plan",
@@ -45,5 +45,12 @@
     "@sdkwork/utils": "workspace:*",
     "@types/node": "^25.5.2",
     "typescript": "^6.0.2"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
   }
 }
