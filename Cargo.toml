@@ -1,6 +1,7 @@
 [workspace]
 resolver = "2"
 members = [
+    "crates/sdkwork-doudizhu-gateway-assembly",
     "crates/sdkwork-doudizhu-standalone-gateway",
     "crates/sdkwork-doudizhu-database-host",
     "crates/sdkwork-game-match-service",

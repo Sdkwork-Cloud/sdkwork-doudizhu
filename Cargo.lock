@@ -1716,6 +1716,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "sdkwork-doudizhu-gateway-assembly"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "sdkwork-doudizhu-standalone-gateway",
+ "sdkwork-routes-match-app-api",
+ "sdkwork-routes-match-backend-api",
+ "tokio",
+]
+
+[[package]]
 name = "sdkwork-doudizhu-standalone-gateway"
 version = "0.1.0"
 dependencies = [
