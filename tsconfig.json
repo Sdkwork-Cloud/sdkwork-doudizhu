@@ -8,6 +8,7 @@
     ],
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
@@ -23,9 +24,13 @@
     }
   },
   "include": [
-    "scripts/**/*.mjs",
-    "tools/**/*.mjs",
-    "packages/**/*.ts",
-    "sdks/test/**/*.mjs"
+    "apps/sdkwork-doudizhu-common/packages/*/src/**/*.ts",
+    "apps/sdkwork-doudizhu-pc/packages/sdkwork-doudizhu-pc-core/src/sdk/**/*.ts",
+    "apps/sdkwork-doudizhu-pc/packages/sdkwork-doudizhu-pc-core/src/composition/**/*.ts",
+    "sdks/*/*-typescript/src/**/*.ts"
+  ],
+  "exclude": [
+    "**/node_modules/**",
+    "**/generated/**"
   ]
 }

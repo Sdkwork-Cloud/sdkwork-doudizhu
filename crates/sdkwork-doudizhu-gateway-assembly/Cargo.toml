@@ -11,6 +11,14 @@ path = "src/lib.rs"
 [dependencies]
 axum.workspace = true
 tokio.workspace = true
-sdkwork-doudizhu-standalone-gateway = { path = "../sdkwork-doudizhu-standalone-gateway" }
+sdkwork_doudizhu_service_host.workspace = true
+sdkwork-web-core.workspace = true
+sdkwork-web-axum.workspace = true
+sdkwork-web-contract.workspace = true
+sdkwork-iam-web-adapter.workspace = true
 sdkwork-routes-match-app-api = { path = "../sdkwork-routes-match-app-api" }
 sdkwork-routes-match-backend-api = { path = "../sdkwork-routes-match-backend-api" }
+
+[build-dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

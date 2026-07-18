@@ -4,7 +4,7 @@ use axum::routing::get;
 use axum::Router;
 use sdkwork_game_match_service::GameMatchRepository;
 use sdkwork_routes_match_app_api::{respond_list, MatchListQuery, MatchStore};
-use sdkwork_web_axum::RequirePrincipal;
+use sdkwork_web_axum::{extractors::WebRequestContext, RequirePrincipal};
 
 use crate::paths::BACKEND_MATCH_LIST_PATH;
 
@@ -18,6 +18,7 @@ where
 }
 
 async fn list_matches<R>(
+    ctx: WebRequestContext,
     RequirePrincipal(principal): RequirePrincipal,
     State(store): State<MatchStore<R>>,
     Query(query): Query<MatchListQuery>,
@@ -25,5 +26,5 @@ async fn list_matches<R>(
 where
     R: GameMatchRepository + Send + Sync,
 {
-    respond_list(&store, principal.tenant_id(), query).await
+    respond_list(&ctx, &store, principal.tenant_id(), query).await
 }

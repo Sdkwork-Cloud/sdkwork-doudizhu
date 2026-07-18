@@ -2,19 +2,15 @@ import { HttpClient, createHttpClient } from './http/client';
 import type { SdkworkAppConfig } from './types/common';
 import type { AuthTokenManager } from '@sdkwork/sdk-common';
 
-import { HealthApi, createHealthApi } from './api/health';
 import { DoudizhuApi, createDoudizhuApi } from './api/doudizhu';
 
 export class SdkworkDoudizhuAppClient {
   private httpClient: HttpClient;
 
-  public readonly health: HealthApi;
   public readonly doudizhu: DoudizhuApi;
 
   constructor(config: SdkworkAppConfig) {
     this.httpClient = createHttpClient(config);
-    this.health = createHealthApi(this.httpClient);
-
     this.doudizhu = createDoudizhuApi(this.httpClient);
   }
   setAuthToken(token: string): this {

@@ -4,7 +4,7 @@
   "applicationCode": "doudizhu",
   "packageName": "sdkwork-doudizhu-gateway-assembly",
   "crateDir": "crates/sdkwork-doudizhu-gateway-assembly",
-  "generatedAt": "2026-07-16T04:44:51.044Z",
+  "generatedAt": "2026-07-16T17:04:19.257Z",
   "routeCrates": [
     {
       "packageName": "sdkwork-routes-match-app-api",

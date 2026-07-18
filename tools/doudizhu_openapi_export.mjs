@@ -72,60 +72,91 @@ const sharedComponents = {
     ProblemDetail: {
       type: 'object',
       additionalProperties: true,
-      required: ['type', 'title', 'status'],
+      required: ['type', 'title', 'status', 'code', 'traceId'],
       properties: {
-        type: { type: 'string', format: 'uri' },
+        type: { type: 'string', format: 'uri-reference' },
         title: { type: 'string' },
-        status: { type: 'integer' },
+        status: { type: 'integer', minimum: 100, maximum: 599 },
         detail: { type: 'string' },
         instance: { type: 'string' },
+        code: { type: 'integer', format: 'int32', minimum: 40001, maximum: 79999 },
+        traceId: { type: 'string', format: 'uuid' },
       },
     },
-    DoudizhuApiResult: {
+    SdkWorkApiResponse: {
       type: 'object',
       additionalProperties: false,
-      required: ['code', 'message', 'data'],
+      required: ['code', 'data', 'traceId'],
       properties: {
-        code: { type: 'string' },
-        message: { type: 'string' },
+        code: { type: 'integer', format: 'int32', enum: [0], default: 0 },
         data: {},
+        traceId: { type: 'string', format: 'uuid' },
       },
     },
-    DoudizhuHealthResponse: {
+    PageInfo: {
       type: 'object',
       additionalProperties: false,
-      required: ['status', 'service'],
+      required: ['mode', 'page', 'pageSize', 'totalItems', 'totalPages'],
       properties: {
-        status: { type: 'string' },
-        service: { type: 'string' },
+        mode: { type: 'string', enum: ['offset', 'cursor'] },
+        page: { type: 'integer', minimum: 1 },
+        pageSize: { type: 'integer', minimum: 1, maximum: 200 },
+        totalItems: { type: 'string', pattern: '^[0-9]+$' },
+        totalPages: { type: 'integer', minimum: 0 },
+        nextCursor: { type: ['string', 'null'] },
+        hasMore: { type: 'boolean' },
       },
     },
     DoudizhuMatchItem: {
       type: 'object',
       additionalProperties: false,
-      required: ['id', 'matchCode', 'title', 'status'],
+      required: ['id', 'gameCode', 'title', 'status'],
       properties: {
         id: { type: 'string' },
-        matchCode: { type: 'string' },
+        gameCode: { type: 'string' },
         title: { type: 'string' },
         summary: { type: 'string' },
-        mode: { type: 'string' },
+        genre: { type: 'string' },
         status: { type: 'string' },
       },
     },
-    DoudizhuMatchPage: {
+    DoudizhuMatchData: {
       type: 'object',
       additionalProperties: false,
-      required: ['items', 'total', 'page', 'pageSize'],
+      required: ['item'],
+      properties: {
+        item: { $ref: '#/components/schemas/DoudizhuMatchItem' },
+      },
+    },
+    DoudizhuMatchResponse: {
+      allOf: [
+        { $ref: '#/components/schemas/SdkWorkApiResponse' },
+        {
+          type: 'object',
+          properties: { data: { $ref: '#/components/schemas/DoudizhuMatchData' } },
+        },
+      ],
+    },
+    DoudizhuMatchListData: {
+      type: 'object',
+      additionalProperties: false,
+      required: ['items', 'pageInfo'],
       properties: {
         items: {
           type: 'array',
           items: { $ref: '#/components/schemas/DoudizhuMatchItem' },
         },
-        total: { type: 'integer', minimum: 0 },
-        page: { type: 'integer', minimum: 1 },
-        pageSize: { type: 'integer', minimum: 1 },
+        pageInfo: { $ref: '#/components/schemas/PageInfo' },
       },
+    },
+    DoudizhuMatchListResponse: {
+      allOf: [
+        { $ref: '#/components/schemas/SdkWorkApiResponse' },
+        {
+          type: 'object',
+          properties: { data: { $ref: '#/components/schemas/DoudizhuMatchListData' } },
+        },
+      ],
     },
   },
 };
@@ -148,50 +179,6 @@ function buildOpenApi(title, serverUrl, operations) {
 }
 
 const appOperations = {
-  '/app/v3/api/system/health': {
-    get: {
-      operationId: 'doudizhu.health.check',
-      tags: ['health'],
-      'x-sdkwork-request-context': 'WebRequestContext',
-      'x-sdkwork-api-surface': 'app-api',
-      'x-sdkwork-owner': OWNER,
-      'x-sdkwork-domain': DOMAIN,
-      security: [],
-      responses: {
-        200: {
-          description: 'OK',
-          content: {
-            'application/json': {
-              schema: { $ref: '#/components/schemas/DoudizhuHealthResponse' },
-            },
-          },
-        },
-        default: { $ref: '#/components/responses/ProblemDetailResponse' },
-      },
-    },
-  },
-  '/app/v3/api/system/ready': {
-    get: {
-      operationId: 'doudizhu.ready.check',
-      tags: ['health'],
-      'x-sdkwork-request-context': 'WebRequestContext',
-      'x-sdkwork-api-surface': 'app-api',
-      'x-sdkwork-owner': OWNER,
-      'x-sdkwork-domain': DOMAIN,
-      security: [],
-      responses: {
-        200: {
-          description: 'OK',
-          content: {
-            'application/json': {
-              schema: { $ref: '#/components/schemas/DoudizhuHealthResponse' },
-            },
-          },
-        },
-        default: { $ref: '#/components/responses/ProblemDetailResponse' },
-      },
-    },
-  },
   '/app/v3/api/doudizhu/matches': {
     get: {
       operationId: 'doudizhu.match.list',
@@ -211,7 +198,7 @@ const appOperations = {
           description: 'OK',
           content: {
             'application/json': {
-              schema: { $ref: '#/components/schemas/DoudizhuApiResult' },
+              schema: { $ref: '#/components/schemas/DoudizhuMatchListResponse' },
             },
           },
         },
@@ -234,7 +221,7 @@ const appOperations = {
           description: 'OK',
           content: {
             'application/json': {
-              schema: { $ref: '#/components/schemas/DoudizhuApiResult' },
+              schema: { $ref: '#/components/schemas/DoudizhuMatchResponse' },
             },
           },
         },
@@ -264,7 +251,7 @@ const backendOperations = {
           description: 'OK',
           content: {
             'application/json': {
-              schema: { $ref: '#/components/schemas/DoudizhuApiResult' },
+              schema: { $ref: '#/components/schemas/DoudizhuMatchListResponse' },
             },
           },
         },

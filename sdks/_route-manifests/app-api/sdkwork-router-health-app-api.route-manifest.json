@@ -17,7 +17,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/app/v3/api/system/health",
+      "path": "/healthz",
       "operationId": "doudizhu.health.retrieve",
       "tags": [
         "health"
@@ -46,7 +46,7 @@
     },
     {
       "method": "GET",
-      "path": "/app/v3/api/system/ready",
+      "path": "/readyz",
       "operationId": "doudizhu.ready.retrieve",
       "tags": [
         "health"

@@ -1,7 +1,7 @@
 import { appApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { DoudizhuApiResult } from '../types';
+import type { DoudizhuMatchItem, DoudizhuMatchListData } from '../types';
 
 
 export interface DoudizhuMatchListParams {
@@ -18,17 +18,17 @@ export class DoudizhuMatchApi {
   }
 
 
-async list(params?: DoudizhuMatchListParams): Promise<DoudizhuApiResult> {
+async list(params?: DoudizhuMatchListParams): Promise<DoudizhuMatchListData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<DoudizhuApiResult>(appendQueryString(appApiPath(`/doudizhu/matches`), query));
+    return this.client.get<DoudizhuMatchListData>(appendQueryString(appApiPath(`/doudizhu/matches`), query));
   }
 
-async retrieve(matchId: string): Promise<DoudizhuApiResult> {
-    return this.client.get<DoudizhuApiResult>(appApiPath(`/doudizhu/matches/${serializePathParameter(matchId, { name: 'matchId', style: 'simple', explode: false })}`));
+async retrieve(matchId: string): Promise<DoudizhuMatchItem> {
+    return this.client.get<DoudizhuMatchItem>(appApiPath(`/doudizhu/matches/${serializePathParameter(matchId, { name: 'matchId', style: 'simple', explode: false })}`));
   }
 }
 

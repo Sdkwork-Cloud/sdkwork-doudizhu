@@ -1,7 +1,7 @@
 import { backendApiPath } from './paths';
 import type { HttpClient } from '../http/client';
 
-import type { DoudizhuApiResult } from '../types';
+import type { DoudizhuMatchListData } from '../types';
 
 
 export interface DoudizhuBackendDoudizhuMatchListParams {
@@ -18,13 +18,13 @@ export class DoudizhuBackendDoudizhuMatchApi {
   }
 
 
-async list(params?: DoudizhuBackendDoudizhuMatchListParams): Promise<DoudizhuApiResult> {
+async list(params?: DoudizhuBackendDoudizhuMatchListParams): Promise<DoudizhuMatchListData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<DoudizhuApiResult>(appendQueryString(backendApiPath(`/doudizhu/matches`), query));
+    return this.client.get<DoudizhuMatchListData>(appendQueryString(backendApiPath(`/doudizhu/matches`), query));
   }
 }
 

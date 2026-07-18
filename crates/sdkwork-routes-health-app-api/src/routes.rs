@@ -5,8 +5,8 @@ use axum::{Json, Router};
 use sdkwork_web_core::WebRequestContext;
 use serde_json::json;
 
-pub const HEALTH_PATH: &str = "/app/v3/api/system/health";
-pub const READY_PATH: &str = "/app/v3/api/system/ready";
+pub const HEALTH_PATH: &str = "/healthz";
+pub const READY_PATH: &str = "/readyz";
 
 pub fn build_health_router() -> Router {
     Router::new()

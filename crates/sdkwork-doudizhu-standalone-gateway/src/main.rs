@@ -1,4 +1,5 @@
-use sdkwork_doudizhu_standalone_gateway::{build_match_service, build_router};
+use sdkwork_doudizhu_gateway_assembly::assemble_application_router;
+use sdkwork_doudizhu_standalone_gateway::build_router_from_business;
 use sdkwork_utils_rust::optional::default_if_blank;
 
 #[tokio::main]
@@ -18,10 +19,10 @@ async fn main() {
         "127.0.0.1:8096",
     );
 
-    let store = build_match_service()
+    let assembly = assemble_application_router()
         .await
-        .expect("doudizhu match service bootstrap failed");
-    let app = build_router(store);
+        .expect("doudizhu gateway assembly failed");
+    let app = build_router_from_business(assembly.router);
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
         .expect("bind doudizhu standalone-gateway listener failed");

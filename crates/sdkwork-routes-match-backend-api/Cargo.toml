@@ -12,5 +12,5 @@ path = "src/lib.rs"
 [dependencies]
 axum.workspace = true
 sdkwork_game_match_service.workspace = true
-sdkwork-routes-match-app-api = { path = "../sdkwork-routes-match-app-api" }
+sdkwork_routes_match_app_api.workspace = true
 sdkwork-web-axum.workspace = true

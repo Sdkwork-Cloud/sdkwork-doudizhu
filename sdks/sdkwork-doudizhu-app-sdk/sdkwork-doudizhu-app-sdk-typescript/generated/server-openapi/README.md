@@ -27,7 +27,12 @@ client.setAuthToken('your-auth-token');
 client.setAccessToken('your-access-token');
 
 // Use the SDK
-const result = await client.health.doudizhu.health.check();
+const params = {
+  page: 1,
+  page_size: 2,
+  status: 'status',
+};
+const result = await client.doudizhu.match.list(params);
 ```
 
 ## Authentication
@@ -54,17 +59,9 @@ const client = new SdkworkDoudizhuAppClient({
 
 ## API Modules
 
-- `client.health` - health API
 - `client.doudizhu` - doudizhu API
 
 ## Usage Examples
-
-### health
-
-```typescript
-// GET /app/v3/api/system/health
-const result = await client.health.doudizhu.health.check();
-```
 
 ### doudizhu
 
@@ -84,7 +81,12 @@ const result = await client.doudizhu.match.list(params);
 import { SdkworkDoudizhuAppClient, NetworkError, TimeoutError, AuthenticationError } from '@sdkwork-internal/doudizhu-app-sdk-generated';
 
 try {
-  const result = await client.health.doudizhu.health.check();
+  const params = {
+    page: 1,
+    page_size: 2,
+    status: 'status',
+  };
+  const result = await client.doudizhu.match.list(params);
 } catch (error) {
   if (error instanceof AuthenticationError) {
     console.error('Authentication failed:', error.message);

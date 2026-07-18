@@ -1720,10 +1720,25 @@ name = "sdkwork-doudizhu-gateway-assembly"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-doudizhu-standalone-gateway",
+ "sdkwork-doudizhu-service-host",
+ "sdkwork-iam-web-adapter",
  "sdkwork-routes-match-app-api",
  "sdkwork-routes-match-backend-api",
+ "sdkwork-web-axum",
+ "sdkwork-web-contract",
+ "sdkwork-web-core",
+ "serde",
+ "serde_json",
  "tokio",
+]
+
+[[package]]
+name = "sdkwork-doudizhu-service-host"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-doudizhu-database-host",
+ "sdkwork-game-match-repository-sqlx",
+ "sdkwork-game-match-service",
 ]
 
 [[package]]
@@ -1732,19 +1747,11 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "http-body-util",
- "sdkwork-doudizhu-database-host",
- "sdkwork-game-match-repository-sqlx",
- "sdkwork-game-match-service",
- "sdkwork-iam-context-service",
- "sdkwork-iam-web-adapter",
+ "sdkwork-doudizhu-gateway-assembly",
  "sdkwork-routes-health-app-api",
  "sdkwork-routes-match-app-api",
- "sdkwork-routes-match-backend-api",
  "sdkwork-utils-rust",
- "sdkwork-web-axum",
  "sdkwork-web-bootstrap",
- "sdkwork-web-contract",
- "sdkwork-web-core",
  "serde",
  "serde_json",
  "tokio",
@@ -1872,7 +1879,9 @@ version = "0.1.0"
 dependencies = [
  "axum",
  "sdkwork-game-match-service",
+ "sdkwork-utils-rust",
  "sdkwork-web-axum",
+ "sdkwork-web-core",
  "serde",
  "serde_json",
 ]

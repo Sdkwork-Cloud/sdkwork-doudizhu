@@ -1,6 +1,7 @@
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
 pub struct GameMatchItem {
     pub id: String,
     pub game_code: String,
@@ -13,6 +14,7 @@ pub struct GameMatchItem {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "camelCase")]
 pub struct GameMatchPage {
     pub items: Vec<GameMatchItem>,
     pub total: u64,

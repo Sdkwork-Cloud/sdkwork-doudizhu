@@ -2,14 +2,14 @@
 
 import {
   createClient,
-  type SdkworkDoudizhuAppClient,
+  type SdkworkAppClient,
   type SdkworkAppConfig,
-} from '@sdkwork-internal/doudizhu-app-sdk-generated';
+} from '@sdkwork/doudizhu-app-sdk';
 
 const DEFAULT_DEV_PRINCIPAL =
   'tenant_id=demo-tenant;user_id=user-1;session_id=session-1;app_id=doudizhu;auth_level=password';
 
-let cachedClient: SdkworkDoudizhuAppClient | null = null;
+let cachedClient: SdkworkAppClient | null = null;
 
 export function resolveDoudizhuAppSdkConfig(): SdkworkAppConfig {
   const env = import.meta.env;
@@ -27,7 +27,7 @@ export function resolveDoudizhuAppSdkConfig(): SdkworkAppConfig {
   };
 }
 
-export function getDoudizhuAppClient(): SdkworkDoudizhuAppClient {
+export function getDoudizhuAppClient(): SdkworkAppClient {
   if (!cachedClient) {
     cachedClient = createClient(resolveDoudizhuAppSdkConfig());
   }

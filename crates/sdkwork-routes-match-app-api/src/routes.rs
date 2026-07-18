@@ -1,12 +1,12 @@
 use axum::extract::{Path, Query, State};
-use axum::response::{IntoResponse, Response};
+use axum::response::Response;
 use axum::routing::get;
 use axum::Router;
 use sdkwork_game_match_service::{GameMatchQuery, GameMatchRepository, GameMatchService};
-use sdkwork_web_axum::RequirePrincipal;
+use sdkwork_web_axum::{extractors::WebRequestContext, RequirePrincipal};
 use std::sync::Arc;
 
-use crate::error::{map_match_error, ok_envelope};
+use crate::error::{map_match_error, ok_page_envelope, ok_resource_envelope};
 use crate::paths::{MATCH_DETAIL_PATH, MATCH_LIST_PATH};
 
 pub type MatchStore<R> = Arc<GameMatchService<R>>;
@@ -29,6 +29,7 @@ where
 }
 
 async fn list_matches<R>(
+    ctx: WebRequestContext,
     RequirePrincipal(principal): RequirePrincipal,
     State(store): State<MatchStore<R>>,
     Query(query): Query<MatchListQuery>,
@@ -36,10 +37,11 @@ async fn list_matches<R>(
 where
     R: GameMatchRepository + Send + Sync,
 {
-    respond_list(&store, principal.tenant_id(), query).await
+    respond_list(&ctx, &store, principal.tenant_id(), query).await
 }
 
 async fn get_match<R>(
+    ctx: WebRequestContext,
     RequirePrincipal(principal): RequirePrincipal,
     State(store): State<MatchStore<R>>,
     Path(match_id): Path<String>,
@@ -49,15 +51,13 @@ where
 {
     let tenant_id = principal.tenant_id();
     match store.get_match(tenant_id, &match_id).await {
-        Ok(item) => (axum::http::StatusCode::OK, ok_envelope(item)).into_response(),
-        Err(error) => {
-            let (status, problem) = map_match_error(error);
-            (status, problem).into_response()
-        }
+        Ok(item) => ok_resource_envelope(&ctx, item),
+        Err(error) => map_match_error(error, &ctx),
     }
 }
 
 pub async fn respond_list<R>(
+    ctx: &WebRequestContext,
     store: &GameMatchService<R>,
     tenant_id: &str,
     query: MatchListQuery,
@@ -72,10 +72,7 @@ where
     };
 
     match store.list_matches(tenant_id, match_query).await {
-        Ok(page) => (axum::http::StatusCode::OK, ok_envelope(page)).into_response(),
-        Err(error) => {
-            let (status, problem) = map_match_error(error);
-            (status, problem).into_response()
-        }
+        Ok(page) => ok_page_envelope(ctx, page),
+        Err(error) => map_match_error(error, ctx),
     }
 }
