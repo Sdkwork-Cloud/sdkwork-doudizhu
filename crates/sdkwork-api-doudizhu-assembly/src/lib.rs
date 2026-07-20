@@ -11,7 +11,7 @@ pub mod route_manifest {
 }
 
 pub use bootstrap::{
-    assemble_business_router, assemble_business_router_with_service,
+    assemble_api_router, assemble_api_router_with_service,
     assemble_api_router, ApiAssembly,
 };
 pub use sdkwork_doudizhu_service_host::{

@@ -13,12 +13,12 @@ pub struct ApiAssembly {
     pub router: Router,
 }
 
-pub async fn assemble_business_router() -> Result<ApiAssembly, String> {
+pub async fn assemble_business_routes() -> Result<ApiAssembly, String> {
     let service = build_match_service().await?;
-    Ok(assemble_business_router_with_service(service))
+    Ok(assemble_api_router_with_service(service))
 }
 
-pub fn assemble_business_router_with_service(
+pub fn assemble_api_router_with_service(
     service: SharedMatchService,
 ) -> ApiAssembly {
     let app = with_doudizhu_app_request_context(build_match_app_router(service.clone()));
@@ -28,6 +28,6 @@ pub fn assemble_business_router_with_service(
     }
 }
 
-pub async fn assemble_api_router() -> Result<ApiAssembly, String> {
-    assemble_business_router().await
+pub async fn assemble_business_routes() -> Result<ApiAssembly, String> {
+    assemble_api_router().await
 }
