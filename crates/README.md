@@ -4,7 +4,7 @@ Rust workspace members:
 
 | Crate | Responsibility |
 | --- | --- |
-| `sdkwork-doudizhu-standalone-gateway` | HTTP routes with `sdkwork-web-framework` |
+| `sdkwork-api-doudizhu-standalone-gateway` | HTTP routes with `sdkwork-web-framework` |
 | `sdkwork-doudizhu-database-host` | `sdkwork-database` lifecycle bootstrap |
 | `sdkwork-game-match-service` | Catalog domain service |
 | `sdkwork-game-match-repository-sqlx` | Catalog persistence adapter |

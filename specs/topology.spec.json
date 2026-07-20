@@ -72,8 +72,8 @@
   },
   "components": {
     "applicationServer": {
-      "crate": "sdkwork-doudizhu-standalone-gateway",
-      "binary": "sdkwork-doudizhu-standalone-gateway"
+      "crate": "sdkwork-api-doudizhu-standalone-gateway",
+      "binary": "sdkwork-api-doudizhu-standalone-gateway"
     }
   },
   "orchestration": {
@@ -82,8 +82,8 @@
         "processes": [
           {
             "id": "application.public-ingress",
-            "crate": "sdkwork-doudizhu-standalone-gateway",
-            "binary": "sdkwork-doudizhu-standalone-gateway",
+            "crate": "sdkwork-api-doudizhu-standalone-gateway",
+            "binary": "sdkwork-api-doudizhu-standalone-gateway",
             "required": true,
             "role": "api-standalone-gateway"
           }
@@ -103,8 +103,8 @@
         "processes": [
           {
             "id": "application.public-ingress",
-            "crate": "sdkwork-doudizhu-standalone-gateway",
-            "binary": "sdkwork-doudizhu-standalone-gateway",
+            "crate": "sdkwork-api-doudizhu-standalone-gateway",
+            "binary": "sdkwork-api-doudizhu-standalone-gateway",
             "required": true,
             "role": "api-standalone-gateway"
           }
@@ -118,8 +118,8 @@
         "processes": [
           {
             "id": "application.public-ingress",
-            "crate": "sdkwork-doudizhu-standalone-gateway",
-            "binary": "sdkwork-doudizhu-standalone-gateway",
+            "crate": "sdkwork-api-doudizhu-standalone-gateway",
+            "binary": "sdkwork-api-doudizhu-standalone-gateway",
             "required": true,
             "role": "api-standalone-gateway"
           }

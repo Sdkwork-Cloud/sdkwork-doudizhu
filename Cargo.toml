@@ -1,8 +1,9 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/sdkwork-doudizhu-gateway-assembly",
-    "crates/sdkwork-doudizhu-standalone-gateway",
+    "crates/sdkwork-api-doudizhu-assembly",
+    "crates/sdkwork-api-doudizhu-assembly",
+    "crates/sdkwork-api-doudizhu-standalone-gateway",
     "crates/sdkwork-doudizhu-service-host",
     "crates/sdkwork-doudizhu-database-host",
     "crates/sdkwork-game-match-service",
@@ -17,8 +18,8 @@ edition = "2021"
 version = "0.1.0"
 
 [workspace.dependencies]
-sdkwork_doudizhu_standalone_gateway = { package = "sdkwork-doudizhu-standalone-gateway", path = "crates/sdkwork-doudizhu-standalone-gateway" }
-sdkwork_doudizhu_gateway_assembly = { package = "sdkwork-doudizhu-gateway-assembly", path = "crates/sdkwork-doudizhu-gateway-assembly" }
+sdkwork_api_doudizhu_standalone_gateway = { package = "sdkwork-api-doudizhu-standalone-gateway", path = "crates/sdkwork-api-doudizhu-standalone-gateway" }
+sdkwork_api_doudizhu_assembly = { package = "sdkwork-api-doudizhu-assembly", path = "crates/sdkwork-api-doudizhu-assembly" }
 sdkwork_doudizhu_service_host = { package = "sdkwork-doudizhu-service-host", path = "crates/sdkwork-doudizhu-service-host" }
 sdkwork_doudizhu_database_host = { package = "sdkwork-doudizhu-database-host", path = "crates/sdkwork-doudizhu-database-host" }
 sdkwork_game_match_service = { package = "sdkwork-game-match-service", path = "crates/sdkwork-game-match-service" }

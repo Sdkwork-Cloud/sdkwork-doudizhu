@@ -1,5 +1,5 @@
-use sdkwork_doudizhu_gateway_assembly::assemble_application_router;
-use sdkwork_doudizhu_standalone_gateway::build_router_from_business;
+use sdkwork_api_doudizhu_assembly::assemble_api_router;
+use sdkwork_api_doudizhu_standalone_gateway::build_router_from_business;
 use sdkwork_utils_rust::optional::default_if_blank;
 
 #[tokio::main]
@@ -19,14 +19,14 @@ async fn main() {
         "127.0.0.1:8096",
     );
 
-    let assembly = assemble_application_router()
+    let assembly = assemble_api_router()
         .await
         .expect("doudizhu gateway assembly failed");
     let app = build_router_from_business(assembly.router);
     let listener = tokio::net::TcpListener::bind(&bind_address)
         .await
         .expect("bind doudizhu standalone-gateway listener failed");
-    tracing::info!("sdkwork-doudizhu-standalone-gateway listening on {bind_address}");
+    tracing::info!("sdkwork-api-doudizhu-standalone-gateway listening on {bind_address}");
     axum::serve(listener, app)
         .await
         .expect("serve doudizhu standalone-gateway failed");

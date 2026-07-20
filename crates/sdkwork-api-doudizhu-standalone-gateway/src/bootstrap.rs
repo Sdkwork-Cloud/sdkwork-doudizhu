@@ -1,14 +1,14 @@
 use axum::Router;
-use sdkwork_doudizhu_gateway_assembly::{
-    assemble_application_business_router_with_service, with_doudizhu_app_request_context,
+use sdkwork_api_doudizhu_assembly::{
+    assemble_business_router_with_service, with_doudizhu_app_request_context,
 };
-pub use sdkwork_doudizhu_gateway_assembly::{
+pub use sdkwork_api_doudizhu_assembly::{
     build_match_service, build_memory_match_service, SharedMatchService,
 };
 use sdkwork_routes_health_app_api::build_health_router;
 
 pub fn build_router(store: SharedMatchService) -> Router {
-    let business = assemble_application_business_router_with_service(store).router;
+    let business = assemble_business_router_with_service(store).router;
     build_router_from_business(business)
 }
 
