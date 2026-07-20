@@ -1,0 +1,15 @@
+[package]
+name = "sdkwork-api-doudizhu-assembly"
+edition.workspace = true
+version.workspace = true
+description = "Generated API assembly for sdkwork-doudizhu application HTTP plane."
+
+[lib]
+name = "sdkwork_api_doudizhu_assembly"
+path = "src/lib.rs"
+
+[dependencies]
+axum.workspace = true
+tokio.workspace = true
+sdkwork-routes-match-app-api = { path = "../sdkwork-routes-match-app-api" }
+sdkwork-routes-match-backend-api = { path = "../sdkwork-routes-match-backend-api" }
