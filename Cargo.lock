@@ -1632,8 +1632,8 @@ dependencies = [
  "axum",
  "sdkwork-doudizhu-service-host",
  "sdkwork-iam-web-adapter",
- "sdkwork-routes-match-app-api",
- "sdkwork-routes-match-backend-api",
+ "sdkwork-routes-doudizhu-app-api",
+ "sdkwork-routes-doudizhu-backend-api",
  "sdkwork-web-axum",
  "sdkwork-web-contract",
  "sdkwork-web-core",
@@ -1649,10 +1649,10 @@ dependencies = [
  "axum",
  "http-body-util",
  "sdkwork-api-doudizhu-assembly",
- "sdkwork-routes-health-app-api",
- "sdkwork-routes-match-app-api",
+ "sdkwork-routes-doudizhu-app-api",
  "sdkwork-utils-rust",
  "sdkwork-web-bootstrap",
+ "sdkwork-web-core",
  "serde",
  "serde_json",
  "tokio",
@@ -1754,21 +1754,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-doudizhu-service-host"
-version = "0.1.0"
-dependencies = [
- "sdkwork-doudizhu-database-host",
- "sdkwork-game-match-repository-sqlx",
- "sdkwork-game-match-service",
-]
-
-[[package]]
-name = "sdkwork-game-match-repository-sqlx"
+name = "sdkwork-doudizhu-match-repository-sqlx"
 version = "0.1.0"
 dependencies = [
  "async-trait",
  "sdkwork-database-sqlx",
- "sdkwork-game-match-service",
+ "sdkwork-doudizhu-match-service",
  "sdkwork-utils-rust",
  "serde",
  "sqlx",
@@ -1776,7 +1767,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-game-match-service"
+name = "sdkwork-doudizhu-match-service"
 version = "0.1.0"
 dependencies = [
  "async-trait",
@@ -1785,6 +1776,15 @@ dependencies = [
  "serde",
  "serde_json",
  "tokio",
+]
+
+[[package]]
+name = "sdkwork-doudizhu-service-host"
+version = "0.1.0"
+dependencies = [
+ "sdkwork-doudizhu-database-host",
+ "sdkwork-doudizhu-match-repository-sqlx",
+ "sdkwork-doudizhu-match-service",
 ]
 
 [[package]]
@@ -1867,20 +1867,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-routes-health-app-api"
+name = "sdkwork-routes-doudizhu-app-api"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-web-core",
- "serde_json",
-]
-
-[[package]]
-name = "sdkwork-routes-match-app-api"
-version = "0.1.0"
-dependencies = [
- "axum",
- "sdkwork-game-match-service",
+ "sdkwork-doudizhu-match-service",
  "sdkwork-utils-rust",
  "sdkwork-web-axum",
  "sdkwork-web-core",
@@ -1889,12 +1880,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "sdkwork-routes-match-backend-api"
+name = "sdkwork-routes-doudizhu-backend-api"
 version = "0.1.0"
 dependencies = [
  "axum",
- "sdkwork-game-match-service",
- "sdkwork-routes-match-app-api",
+ "sdkwork-doudizhu-match-service",
+ "sdkwork-routes-doudizhu-app-api",
  "sdkwork-web-axum",
 ]
 

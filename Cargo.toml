@@ -6,11 +6,10 @@ members = [
     "crates/sdkwork-api-doudizhu-standalone-gateway",
     "crates/sdkwork-doudizhu-service-host",
     "crates/sdkwork-doudizhu-database-host",
-    "crates/sdkwork-game-match-service",
-    "crates/sdkwork-game-match-repository-sqlx",
-    "crates/sdkwork-routes-health-app-api",
-    "crates/sdkwork-routes-match-app-api",
-    "crates/sdkwork-routes-match-backend-api",
+    "crates/sdkwork-doudizhu-match-service",
+    "crates/sdkwork-doudizhu-match-repository-sqlx",
+    "crates/sdkwork-routes-doudizhu-app-api",
+    "crates/sdkwork-routes-doudizhu-backend-api",
 ]
 
 [workspace.package]
@@ -22,11 +21,10 @@ sdkwork_api_doudizhu_standalone_gateway = { package = "sdkwork-api-doudizhu-stan
 sdkwork_api_doudizhu_assembly = { package = "sdkwork-api-doudizhu-assembly", path = "crates/sdkwork-api-doudizhu-assembly" }
 sdkwork_doudizhu_service_host = { package = "sdkwork-doudizhu-service-host", path = "crates/sdkwork-doudizhu-service-host" }
 sdkwork_doudizhu_database_host = { package = "sdkwork-doudizhu-database-host", path = "crates/sdkwork-doudizhu-database-host" }
-sdkwork_game_match_service = { package = "sdkwork-game-match-service", path = "crates/sdkwork-game-match-service" }
-sdkwork_game_match_repository_sqlx = { package = "sdkwork-game-match-repository-sqlx", path = "crates/sdkwork-game-match-repository-sqlx" }
-sdkwork_routes_health_app_api = { package = "sdkwork-routes-health-app-api", path = "crates/sdkwork-routes-health-app-api" }
-sdkwork_routes_match_app_api = { package = "sdkwork-routes-match-app-api", path = "crates/sdkwork-routes-match-app-api" }
-sdkwork_routes_match_backend_api = { package = "sdkwork-routes-match-backend-api", path = "crates/sdkwork-routes-match-backend-api" }
+sdkwork_doudizhu_match_service = { package = "sdkwork-doudizhu-match-service", path = "crates/sdkwork-doudizhu-match-service" }
+sdkwork_doudizhu_match_repository_sqlx = { package = "sdkwork-doudizhu-match-repository-sqlx", path = "crates/sdkwork-doudizhu-match-repository-sqlx" }
+sdkwork_routes_doudizhu_app_api = { package = "sdkwork-routes-doudizhu-app-api", path = "crates/sdkwork-routes-doudizhu-app-api" }
+sdkwork_routes_doudizhu_backend_api = { package = "sdkwork-routes-doudizhu-backend-api", path = "crates/sdkwork-routes-doudizhu-backend-api" }
 sdkwork-web-core = { path = "../sdkwork-web-framework/crates/sdkwork-web-core" }
 sdkwork-web-axum = { path = "../sdkwork-web-framework/crates/sdkwork-web-axum" }
 sdkwork-web-bootstrap = { path = "../sdkwork-web-framework/crates/sdkwork-web-bootstrap" }

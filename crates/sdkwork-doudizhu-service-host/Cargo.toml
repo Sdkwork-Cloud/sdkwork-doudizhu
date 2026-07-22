@@ -7,5 +7,5 @@ description = "In-process Doudizhu service container for gateway assembly."
 
 [dependencies]
 sdkwork_doudizhu_database_host.workspace = true
-sdkwork_game_match_repository_sqlx.workspace = true
-sdkwork_game_match_service.workspace = true
+sdkwork_doudizhu_match_repository_sqlx.workspace = true
+sdkwork_doudizhu_match_service.workspace = true

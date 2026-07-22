@@ -20,9 +20,8 @@ const API_INPUTS = {
 };
 
 const ROUTE_MANIFESTS = [
-  joinPath('sdks', '_route-manifests', 'app-api', 'sdkwork-routes-health-app-api.route-manifest.json'),
-  joinPath('sdks', '_route-manifests', 'app-api', 'sdkwork-routes-match-app-api.route-manifest.json'),
-  joinPath('sdks', '_route-manifests', 'backend-api', 'sdkwork-routes-match-backend-api.route-manifest.json'),
+  joinPath('sdks', '_route-manifests', 'app-api', 'sdkwork-routes-doudizhu-app-api.route-manifest.json'),
+  joinPath('sdks', '_route-manifests', 'backend-api', 'sdkwork-routes-doudizhu-backend-api.route-manifest.json'),
 ];
 
 function parseArgs(argv) {

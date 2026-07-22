@@ -4,7 +4,7 @@ use axum::http::{Request, StatusCode};
 use sdkwork_api_doudizhu_standalone_gateway::{
     build_memory_match_service, with_doudizhu_app_request_context,
 };
-use sdkwork_routes_match_app_api::build_match_app_router;
+use sdkwork_routes_doudizhu_app_api::build_match_app_router;
 use sdkwork_web_core::{access_token_jwt, auth_token_jwt};
 use tower::ServiceExt;
 
@@ -73,15 +73,22 @@ async fn match_router_accepts_dev_inline_dual_tokens() {
 }
 
 #[tokio::test]
-async fn build_router_merges_health_and_match_routes() {
+async fn build_router_mounts_infrastructure_and_match_routes() {
     let _env_guard = DEV_AUTH_ENV_LOCK
         .lock()
         .unwrap_or_else(|poisoned| poisoned.into_inner());
     std::env::set_var("SDKWORK_IAM_ALLOW_DEV_AUTH_FALLBACK", "true");
     let (auth_token, access_token) = dev_tokens();
-    let router = sdkwork_api_doudizhu_standalone_gateway::build_router(build_memory_match_service());
+    let router =
+        sdkwork_api_doudizhu_standalone_gateway::build_router(build_memory_match_service());
 
-    for uri in ["/healthz", "/readyz", "/app/v3/api/doudizhu/matches"] {
+    for uri in [
+        "/healthz",
+        "/livez",
+        "/readyz",
+        "/metrics",
+        "/app/v3/api/doudizhu/matches",
+    ] {
         let mut builder = Request::builder().uri(uri);
         if uri.contains("/doudizhu/matches") {
             builder = builder

@@ -2,7 +2,7 @@ use axum::extract::{Path, Query, State};
 use axum::response::Response;
 use axum::routing::get;
 use axum::Router;
-use sdkwork_game_match_service::{GameMatchQuery, GameMatchRepository, GameMatchService};
+use sdkwork_doudizhu_match_service::{GameMatchQuery, GameMatchRepository, GameMatchService};
 use sdkwork_web_axum::{extractors::WebRequestContext, RequirePrincipal};
 use std::sync::Arc;
 

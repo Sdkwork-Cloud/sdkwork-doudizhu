@@ -2,8 +2,8 @@ use axum::extract::{Query, State};
 use axum::response::Response;
 use axum::routing::get;
 use axum::Router;
-use sdkwork_game_match_service::GameMatchRepository;
-use sdkwork_routes_match_app_api::{respond_list, MatchListQuery, MatchStore};
+use sdkwork_doudizhu_match_service::GameMatchRepository;
+use sdkwork_routes_doudizhu_app_api::{respond_list, MatchListQuery, MatchStore};
 use sdkwork_web_axum::{extractors::WebRequestContext, RequirePrincipal};
 
 use crate::paths::BACKEND_MATCH_LIST_PATH;
