@@ -19,6 +19,9 @@ pub fn map_match_error(error: GameError, ctx: &WebRequestContext) -> Response {
             kind,
             message: error.message().to_owned(),
             retry_after_seconds: None,
+            auth_profile: None,
+            failed_stage: None,
+            reason: None,
         },
         ctx.problem_correlation(),
     )
