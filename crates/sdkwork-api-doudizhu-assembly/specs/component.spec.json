@@ -21,6 +21,11 @@
   },
   "canonicalSpecs": [
     {
+      "file": "API_ASSEMBLY_SPEC.md",
+      "path": "../../../sdkwork-specs/API_ASSEMBLY_SPEC.md",
+      "purpose": "Complete host-neutral API contribution contract."
+    },
+    {
       "file": "APPLICATION_GATEWAY_SPEC.md",
       "path": "../../../sdkwork-specs/APPLICATION_GATEWAY_SPEC.md",
       "purpose": "Gateway assembly discovery, business-only mounting, and verification rules."
@@ -40,7 +45,11 @@
     "publicExports": [
       "."
     ],
-    "runtimeEntrypoints": [],
+    "runtimeEntrypoints": [
+      "sdkwork_api_doudizhu_assembly::assemble_api_router",
+      "sdkwork_api_doudizhu_assembly::assemble_api_router_with_pool",
+      "sdkwork_api_doudizhu_assembly::assemble_business_routes"
+    ],
     "routeManifest": "assembly-manifest.json",
     "sdkClients": [],
     "sdkDependencies": [],

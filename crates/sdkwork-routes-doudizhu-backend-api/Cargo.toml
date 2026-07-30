@@ -14,3 +14,4 @@ axum.workspace = true
 sdkwork_doudizhu_match_service.workspace = true
 sdkwork_routes_doudizhu_app_api.workspace = true
 sdkwork-web-axum.workspace = true
+sdkwork-web-core.workspace = true

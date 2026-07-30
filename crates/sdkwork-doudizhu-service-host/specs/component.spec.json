@@ -12,11 +12,14 @@
   },
   "contracts": {
     "publicExports": ["."],
-    "runtimeEntrypoints": [],
+    "runtimeEntrypoints": [
+      "DoudizhuServiceHost::from_env",
+      "DoudizhuServiceHost::from_pool"
+    ],
     "sdkDependencies": [],
     "dependencyApiExports": [],
     "dependencyApiSurfaces": [],
     "events": [],
-    "configKeys": ["DOUDIZHU_REPOSITORY_MODE"]
+    "configKeys": []
   }
 }

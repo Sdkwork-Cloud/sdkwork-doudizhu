@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "kind": "sdkwork.component.spec",
+  "component": {
+    "name": "sdkwork-doudizhu-database-host",
+    "type": "rust-database-host",
+    "root": "crates/sdkwork-doudizhu-database-host",
+    "domain": "game",
+    "capability": "database-host",
+    "surface": "database-host",
+    "languages": ["rust"],
+    "generated": false
+  },
+  "canonicalSpecs": [
+    {
+      "file": "DATABASE_FRAMEWORK_SPEC.md",
+      "path": "../../../sdkwork-specs/DATABASE_FRAMEWORK_SPEC.md",
+      "purpose": "Database module lifecycle and process pool ownership."
+    }
+  ],
+  "contracts": {
+    "publicExports": ["."],
+    "runtimeEntrypoints": [
+      "bootstrap_doudizhu_database",
+      "bootstrap_doudizhu_database_from_env"
+    ],
+    "sdkDependencies": [],
+    "dependencyApiExports": [],
+    "dependencyApiSurfaces": [],
+    "events": [],
+    "configKeys": ["DOUDIZHU_DATABASE_URL", "SDKWORK_DOUDIZHU_APP_ROOT"]
+  },
+  "verification": {
+    "commands": ["cargo check -p sdkwork-doudizhu-database-host"]
+  }
+}

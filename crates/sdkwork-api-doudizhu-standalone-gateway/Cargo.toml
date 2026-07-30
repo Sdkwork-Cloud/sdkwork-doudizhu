@@ -3,11 +3,7 @@ name = "sdkwork-api-doudizhu-standalone-gateway"
 version.workspace = true
 edition.workspace = true
 license = "Apache-2.0"
-description = "SDKWork doudizhu HTTP API server with sdkwork-web-framework integration."
-
-[lib]
-path = "src/lib.rs"
-
+description = "SDKWork Doudizhu standalone host for the canonical API assembly."
 
 [[bin]]
 name = "sdkwork-api-doudizhu-standalone-gateway"
@@ -15,19 +11,11 @@ path = "src/main.rs"
 
 [dependencies]
 axum.workspace = true
-serde.workspace = true
-serde_json.workspace = true
 sdkwork_api_doudizhu_assembly.workspace = true
 sdkwork-web-bootstrap.workspace = true
+sdkwork-iam-web-adapter.workspace = true
 sdkwork-utils-rust.workspace = true
 tokio.workspace = true
 tower-http = { version = "0.6", features = ["cors"] }
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
-
-[dev-dependencies]
-http-body-util = "0.1"
-sdkwork_routes_doudizhu_app_api.workspace = true
-sdkwork-web-core.workspace = true
-tokio.workspace = true
-tower = { version = "0.5", features = ["util"] }

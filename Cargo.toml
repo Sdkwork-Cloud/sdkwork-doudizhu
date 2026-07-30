@@ -2,7 +2,6 @@
 resolver = "2"
 members = [
     "crates/sdkwork-api-doudizhu-assembly",
-    "crates/sdkwork-api-doudizhu-assembly",
     "crates/sdkwork-api-doudizhu-standalone-gateway",
     "crates/sdkwork-doudizhu-service-host",
     "crates/sdkwork-doudizhu-database-host",
