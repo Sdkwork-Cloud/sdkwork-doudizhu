@@ -4,7 +4,7 @@ Safe checked-in examples for `sdkwork-doudizhu`. Local overrides such as `.env.l
 
 | File | Purpose |
 | --- | --- |
-| `doudizhu.database.example.toml` | PostgreSQL connection template for `DOUDIZHU_DATABASE_*` |
+| `doudizhu.database.example.toml` | PostgreSQL connection template using `SDKWORK_DATABASE_*` |
 | `topology/` | Deployment profile and service-layout env templates |
 
 See `../sdkwork-specs/CONFIG_SPEC.md` and `../sdkwork-specs/ENVIRONMENT_SPEC.md`.

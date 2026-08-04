@@ -28,7 +28,7 @@
     "dependencyApiExports": [],
     "dependencyApiSurfaces": [],
     "events": [],
-    "configKeys": ["DOUDIZHU_DATABASE_URL", "SDKWORK_DOUDIZHU_APP_ROOT"]
+    "configKeys": ["SDKWORK_DATABASE_*", "SDKWORK_DOUDIZHU_APP_ROOT"]
   },
   "verification": {
     "commands": ["cargo check -p sdkwork-doudizhu-database-host"]

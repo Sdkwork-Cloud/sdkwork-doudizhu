@@ -54,7 +54,7 @@
     "routeManifest": "sdks/_route-manifests/app-api/sdkwork-routes-doudizhu-app-api.route-manifest.json",
     "sdkClients": ["sdkwork-doudizhu-app-sdk", "sdkwork-doudizhu-backend-sdk"],
     "events": [],
-    "configKeys": ["DOUDIZHU_DATABASE_URL", "SDKWORK_DOUDIZHU_APP_ROOT"]
+    "configKeys": ["SDKWORK_DATABASE_*", "SDKWORK_DOUDIZHU_APP_ROOT"]
   },
   "verification": {
     "commands": ["pnpm verify"]
