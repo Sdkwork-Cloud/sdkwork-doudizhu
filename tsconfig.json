@@ -11,17 +11,7 @@
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
-    "noEmit": true,
-    "ignoreDeprecations": "6.0",
-    "baseUrl": ".",
-    "paths": {
-      "@sdkwork/utils": [
-        "../sdkwork-utils/packages/sdkwork-utils-typescript/src/index.ts"
-      ],
-      "@sdkwork/doudizhu-contracts": [
-        "apps/sdkwork-doudizhu-common/packages/sdkwork-doudizhu-contracts/src/index.ts"
-      ]
-    }
+    "noEmit": true
   },
   "include": [
     "apps/sdkwork-doudizhu-common/packages/*/src/**/*.ts",

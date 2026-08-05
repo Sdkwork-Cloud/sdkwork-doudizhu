@@ -3,10 +3,6 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 
-const doudizhuAppSdkRoot = path.resolve(
-  __dirname,
-  '../../sdks/sdkwork-doudizhu-app-sdk/sdkwork-doudizhu-app-sdk-typescript/src/index.ts',
-);
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
@@ -19,10 +15,6 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
-        '@sdkwork-internal/doudizhu-app-sdk-generated': path.resolve(
-          doudizhuAppSdkRoot,
-          'src/index.ts',
-        ),
       },
     },
     server: {
