@@ -18,14 +18,17 @@
 
 BEGIN;
 
+ALTER TABLE ddz_match ADD COLUMN IF NOT EXISTS organization_id TEXT NOT NULL DEFAULT '0';
 UPDATE ddz_match SET organization_id = '0' WHERE organization_id IS NULL;
 ALTER TABLE ddz_match ALTER COLUMN organization_id SET DEFAULT '0';
 ALTER TABLE ddz_match ALTER COLUMN organization_id SET NOT NULL;
 
+ALTER TABLE ddz_room ADD COLUMN IF NOT EXISTS organization_id TEXT NOT NULL DEFAULT '0';
 UPDATE ddz_room SET organization_id = '0' WHERE organization_id IS NULL;
 ALTER TABLE ddz_room ALTER COLUMN organization_id SET DEFAULT '0';
 ALTER TABLE ddz_room ALTER COLUMN organization_id SET NOT NULL;
 
+ALTER TABLE ddz_leaderboard ADD COLUMN IF NOT EXISTS organization_id TEXT NOT NULL DEFAULT '0';
 UPDATE ddz_leaderboard SET organization_id = '0' WHERE organization_id IS NULL;
 ALTER TABLE ddz_leaderboard ALTER COLUMN organization_id SET DEFAULT '0';
 ALTER TABLE ddz_leaderboard ALTER COLUMN organization_id SET NOT NULL;
