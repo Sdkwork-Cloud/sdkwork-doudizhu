@@ -14,8 +14,8 @@ tokio.workspace = true
 sdkwork-web-bootstrap.workspace = true
 sdkwork-database-sqlx.workspace = true
 sdkwork_doudizhu_service_host.workspace = true
-sdkwork-routes-doudizhu-app-api = { path = "../sdkwork-routes-doudizhu-app-api" }
-sdkwork-routes-doudizhu-backend-api = { path = "../sdkwork-routes-doudizhu-backend-api" }
+sdkwork_routes_doudizhu_app_api.workspace = true
+sdkwork_routes_doudizhu_backend_api.workspace = true
 
 [dev-dependencies]
 http-body-util = "0.1"
