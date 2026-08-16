@@ -34,7 +34,8 @@
     "requiredPorts": [
       {
         "name": "applicationApiAssembly",
-        "export": "sdkwork-api-doudizhu-assembly"
+        "export": "sdkwork_api_doudizhu_assembly::assemble_api_router",
+        "provider": "sdkwork-api-doudizhu-assembly"
       }
     ],
     "runtimeEntrypoints": ["src/main.rs"],
