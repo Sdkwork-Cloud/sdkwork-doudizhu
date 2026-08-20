@@ -1,5 +1,5 @@
 import { backendApiPath } from './paths';
-import type { HttpClient } from '../http/client';
+import type { ApiRequestOptions, HttpClient } from '../http/client';
 
 import type { DoudizhuMatchListData } from '../types';
 
@@ -18,44 +18,38 @@ export class DoudizhuBackendDoudizhuMatchApi {
   }
 
 
-async list(params?: DoudizhuBackendDoudizhuMatchListParams): Promise<DoudizhuMatchListData> {
+async list(params?: DoudizhuBackendDoudizhuMatchListParams, requestOptions?: ApiRequestOptions): Promise<DoudizhuMatchListData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<DoudizhuMatchListData>(appendQueryString(backendApiPath(`/doudizhu/matches`), query));
+    return this.client.request<DoudizhuMatchListData>(appendQueryString(backendApiPath(`/doudizhu/matches`), query), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'page' });
   }
 }
 
 export class DoudizhuBackendDoudizhuApi {
-  private client: HttpClient;
   public readonly match: DoudizhuBackendDoudizhuMatchApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.match = new DoudizhuBackendDoudizhuMatchApi(client);
   }
 
 }
 
 export class DoudizhuBackendApi {
-  private client: HttpClient;
   public readonly doudizhu: DoudizhuBackendDoudizhuApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.doudizhu = new DoudizhuBackendDoudizhuApi(client);
   }
 
 }
 
 export class DoudizhuApi {
-  private client: HttpClient;
   public readonly backend: DoudizhuBackendApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.backend = new DoudizhuBackendApi(client);
   }
 

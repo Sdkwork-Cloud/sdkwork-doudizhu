@@ -1,5 +1,5 @@
 import { appApiPath } from './paths';
-import type { HttpClient } from '../http/client';
+import type { ApiRequestOptions, HttpClient } from '../http/client';
 
 import type { DoudizhuMatchItem, DoudizhuMatchListData } from '../types';
 
@@ -18,26 +18,24 @@ export class DoudizhuMatchApi {
   }
 
 
-async list(params?: DoudizhuMatchListParams): Promise<DoudizhuMatchListData> {
+async list(params?: DoudizhuMatchListParams, requestOptions?: ApiRequestOptions): Promise<DoudizhuMatchListData> {
     const query = buildQueryString([
       { name: 'page', value: params?.page, style: 'form', explode: true, allowReserved: false },
       { name: 'page_size', value: params?.pageSize, style: 'form', explode: true, allowReserved: false },
       { name: 'status', value: params?.status, style: 'form', explode: true, allowReserved: false },
     ]);
-    return this.client.get<DoudizhuMatchListData>(appendQueryString(appApiPath(`/doudizhu/matches`), query));
+    return this.client.request<DoudizhuMatchListData>(appendQueryString(appApiPath(`/doudizhu/matches`), query), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'page' });
   }
 
-async retrieve(matchId: string): Promise<DoudizhuMatchItem> {
-    return this.client.get<DoudizhuMatchItem>(appApiPath(`/doudizhu/matches/${serializePathParameter(matchId, { name: 'matchId', style: 'simple', explode: false })}`));
+async retrieve(matchId: string, requestOptions?: ApiRequestOptions): Promise<DoudizhuMatchItem> {
+    return this.client.request<DoudizhuMatchItem>(appApiPath(`/doudizhu/matches/${serializePathParameter(matchId, { name: 'matchId', style: 'simple', explode: false })}`), { ...(requestOptions?.signal !== undefined ? { signal: requestOptions.signal } : {}), ...(requestOptions?.timeout !== undefined ? { timeout: requestOptions.timeout } : {}), method: 'GET' as any, sdkworkUnwrapKind: 'item' });
   }
 }
 
 export class DoudizhuApi {
-  private client: HttpClient;
   public readonly match: DoudizhuMatchApi;
 
   constructor(client: HttpClient) {
-    this.client = client;
     this.match = new DoudizhuMatchApi(client);
   }
 

@@ -11,8 +11,8 @@
   "status": "ok",
   "mode": "apply",
   "hasChanges": true,
-  "hasDestructiveChanges": true,
-  "changeFingerprint": "6ff51475807de45e712f4a5ca8d8ec6a20a853a4c126acca7ea94a7f36b8adb9",
+  "hasDestructiveChanges": false,
+  "changeFingerprint": "b88d478df5fc6f50a0cb674b61ed64899612f46413bf87bc775ff7c25d8ae4f1",
   "changeImpact": {
     "schemaVersion": 1,
     "areas": [
@@ -20,15 +20,18 @@
       "models",
       "runtime",
       "build-metadata",
-      "documentation"
+      "publish-workflow",
+      "documentation",
+      "unknown"
     ],
     "details": [
       {
         "area": "api-surface",
         "paths": [
+          "src/api/base.ts",
           "src/api/doudizhu.ts",
-          "src/api/health.ts",
           "src/api/index.ts",
+          "src/api/paths.ts",
           "src/http/client.ts",
           "src/sdk.ts"
         ]
@@ -36,13 +39,11 @@
       {
         "area": "models",
         "paths": [
-          "src/types/doudizhu-api-result.ts",
-          "src/types/doudizhu-health-response.ts",
+          "src/types/common.ts",
           "src/types/doudizhu-match-data.ts",
           "src/types/doudizhu-match-item.ts",
           "src/types/doudizhu-match-list-data.ts",
           "src/types/doudizhu-match-list-response.ts",
-          "src/types/doudizhu-match-page.ts",
           "src/types/doudizhu-match-response.ts",
           "src/types/index.ts",
           "src/types/page-info.ts",
@@ -53,25 +54,46 @@
       {
         "area": "runtime",
         "paths": [
-          "src/http/client.ts"
+          "src/auth/index.ts",
+          "src/http/client.ts",
+          "src/http/index.ts"
         ]
       },
       {
         "area": "build-metadata",
         "paths": [
           "package.json",
-          "sdkwork-sdk.json"
+          "sdkwork-sdk.json",
+          "tsconfig.json"
+        ]
+      },
+      {
+        "area": "publish-workflow",
+        "paths": [
+          "bin/publish-core.mjs",
+          "bin/publish.ps1",
+          "bin/publish.sh",
+          "bin/sdk-gen.bat",
+          "bin/sdk-gen.sh"
         ]
       },
       {
         "area": "documentation",
         "paths": [
+          "CHANGELOG.md",
           "README.md"
+        ]
+      },
+      {
+        "area": "unknown",
+        "paths": [
+          "LICENSE",
+          "src/index.ts"
         ]
       }
     ],
     "requiresVerification": true,
-    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, documentation. Verification is required."
+    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown. Verification is required."
   },
   "executionDecision": {
     "schemaVersion": 1,
@@ -82,8 +104,8 @@
     "summary": "Changes have been applied. Run the required verification plan now.",
     "reasons": [
       "backed-up-generated-files",
-      "deleted-generated-files",
       "manual-review-required",
+      "unknown-impact",
       "verification-required"
     ]
   },
@@ -95,7 +117,7 @@
         "id": "verify-check",
         "title": "Unified package check",
         "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, documentation.",
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown.",
         "workingDirectory": "E:\\sdkwork-space\\sdkwork-doudizhu\\sdks\\sdkwork-doudizhu-app-sdk\\sdkwork-doudizhu-app-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -113,7 +135,7 @@
         "id": "verify-build",
         "title": "Unified package build",
         "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, documentation.",
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown.",
         "workingDirectory": "E:\\sdkwork-space\\sdkwork-doudizhu\\sdks\\sdkwork-doudizhu-app-sdk\\sdkwork-doudizhu-app-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -132,13 +154,13 @@
   "verificationPlan": {
     "shouldRun": true,
     "runPhase": "now",
-    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, documentation. Verification is required. Run the required verification commands now against the generated SDK output.",
+    "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown. Verification is required. Run the required verification commands now against the generated SDK output.",
     "steps": [
       {
         "id": "check",
         "title": "Unified package check",
         "required": true,
-        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, documentation.",
+        "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown.",
         "workingDirectory": "E:\\sdkwork-space\\sdkwork-doudizhu\\sdks\\sdkwork-doudizhu-app-sdk\\sdkwork-doudizhu-app-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -156,7 +178,7 @@
         "id": "build",
         "title": "Unified package build",
         "required": true,
-        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, documentation.",
+        "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown.",
         "workingDirectory": "E:\\sdkwork-space\\sdkwork-doudizhu\\sdks\\sdkwork-doudizhu-app-sdk\\sdkwork-doudizhu-app-sdk-typescript\\generated\\server-openapi",
         "command": "node",
         "args": [
@@ -195,34 +217,15 @@
   "syncSummary": {
     "dryRun": false,
     "controlPlaneEnabled": true,
-    "writtenFiles": 16,
+    "writtenFiles": 30,
     "skippedScaffoldFiles": 2,
-    "skippedUnchangedGeneratedFiles": 14,
-    "deletedGeneratedFiles": 4,
+    "skippedUnchangedGeneratedFiles": 0,
+    "deletedGeneratedFiles": 0,
     "changeSummaryPath": ".sdkwork/sdkwork-generator-changes.json",
-    "changeFingerprint": "6ff51475807de45e712f4a5ca8d8ec6a20a853a4c126acca7ea94a7f36b8adb9",
+    "changeFingerprint": "b88d478df5fc6f50a0cb674b61ed64899612f46413bf87bc775ff7c25d8ae4f1",
     "changes": {
-      "createdGeneratedFiles": [
-        "src/types/doudizhu-match-data.ts",
-        "src/types/doudizhu-match-list-data.ts",
-        "src/types/doudizhu-match-list-response.ts",
-        "src/types/doudizhu-match-response.ts",
-        "src/types/page-info.ts",
-        "src/types/sdk-work-api-response.ts"
-      ],
+      "createdGeneratedFiles": [],
       "updatedGeneratedFiles": [
-        "package.json",
-        "README.md",
-        "sdkwork-sdk.json",
-        "src/api/doudizhu.ts",
-        "src/api/index.ts",
-        "src/http/client.ts",
-        "src/sdk.ts",
-        "src/types/doudizhu-match-item.ts",
-        "src/types/index.ts",
-        "src/types/problem-detail.ts"
-      ],
-      "unchangedGeneratedFiles": [
         "bin/publish-core.mjs",
         "bin/publish.ps1",
         "bin/publish.sh",
@@ -230,28 +233,68 @@
         "bin/sdk-gen.sh",
         "CHANGELOG.md",
         "LICENSE",
+        "package.json",
+        "README.md",
+        "sdkwork-sdk.json",
         "src/api/base.ts",
+        "src/api/doudizhu.ts",
+        "src/api/index.ts",
         "src/api/paths.ts",
         "src/auth/index.ts",
+        "src/http/client.ts",
         "src/http/index.ts",
         "src/index.ts",
+        "src/sdk.ts",
         "src/types/common.ts",
+        "src/types/doudizhu-match-data.ts",
+        "src/types/doudizhu-match-item.ts",
+        "src/types/doudizhu-match-list-data.ts",
+        "src/types/doudizhu-match-list-response.ts",
+        "src/types/doudizhu-match-response.ts",
+        "src/types/index.ts",
+        "src/types/page-info.ts",
+        "src/types/problem-detail.ts",
+        "src/types/sdk-work-api-response.ts",
         "tsconfig.json"
       ],
-      "deletedGeneratedFiles": [
-        "src/api/health.ts",
-        "src/types/doudizhu-api-result.ts",
-        "src/types/doudizhu-health-response.ts",
-        "src/types/doudizhu-match-page.ts"
-      ],
+      "unchangedGeneratedFiles": [],
+      "deletedGeneratedFiles": [],
       "scaffoldedFiles": [],
       "preservedScaffoldFiles": [
         "custom/build-runtime.mjs",
         "custom/README.md"
       ],
       "backedUpFiles": [
+        "bin/publish-core.mjs",
+        "bin/publish.ps1",
+        "bin/publish.sh",
+        "bin/sdk-gen.bat",
+        "bin/sdk-gen.sh",
+        "CHANGELOG.md",
+        "LICENSE",
         "package.json",
-        "sdkwork-sdk.json"
+        "README.md",
+        "sdkwork-sdk.json",
+        "src/api/base.ts",
+        "src/api/doudizhu.ts",
+        "src/api/index.ts",
+        "src/api/paths.ts",
+        "src/auth/index.ts",
+        "src/http/client.ts",
+        "src/http/index.ts",
+        "src/index.ts",
+        "src/sdk.ts",
+        "src/types/common.ts",
+        "src/types/doudizhu-match-data.ts",
+        "src/types/doudizhu-match-item.ts",
+        "src/types/doudizhu-match-list-data.ts",
+        "src/types/doudizhu-match-list-response.ts",
+        "src/types/doudizhu-match-response.ts",
+        "src/types/index.ts",
+        "src/types/page-info.ts",
+        "src/types/problem-detail.ts",
+        "src/types/sdk-work-api-response.ts",
+        "tsconfig.json"
       ]
     },
     "impact": {
@@ -261,15 +304,18 @@
         "models",
         "runtime",
         "build-metadata",
-        "documentation"
+        "publish-workflow",
+        "documentation",
+        "unknown"
       ],
       "details": [
         {
           "area": "api-surface",
           "paths": [
+            "src/api/base.ts",
             "src/api/doudizhu.ts",
-            "src/api/health.ts",
             "src/api/index.ts",
+            "src/api/paths.ts",
             "src/http/client.ts",
             "src/sdk.ts"
           ]
@@ -277,13 +323,11 @@
         {
           "area": "models",
           "paths": [
-            "src/types/doudizhu-api-result.ts",
-            "src/types/doudizhu-health-response.ts",
+            "src/types/common.ts",
             "src/types/doudizhu-match-data.ts",
             "src/types/doudizhu-match-item.ts",
             "src/types/doudizhu-match-list-data.ts",
             "src/types/doudizhu-match-list-response.ts",
-            "src/types/doudizhu-match-page.ts",
             "src/types/doudizhu-match-response.ts",
             "src/types/index.ts",
             "src/types/page-info.ts",
@@ -294,36 +338,57 @@
         {
           "area": "runtime",
           "paths": [
-            "src/http/client.ts"
+            "src/auth/index.ts",
+            "src/http/client.ts",
+            "src/http/index.ts"
           ]
         },
         {
           "area": "build-metadata",
           "paths": [
             "package.json",
-            "sdkwork-sdk.json"
+            "sdkwork-sdk.json",
+            "tsconfig.json"
+          ]
+        },
+        {
+          "area": "publish-workflow",
+          "paths": [
+            "bin/publish-core.mjs",
+            "bin/publish.ps1",
+            "bin/publish.sh",
+            "bin/sdk-gen.bat",
+            "bin/sdk-gen.sh"
           ]
         },
         {
           "area": "documentation",
           "paths": [
+            "CHANGELOG.md",
             "README.md"
+          ]
+        },
+        {
+          "area": "unknown",
+          "paths": [
+            "LICENSE",
+            "src/index.ts"
           ]
         }
       ],
       "requiresVerification": true,
-      "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, documentation. Verification is required."
+      "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown. Verification is required."
     },
     "verificationPlan": {
       "shouldRun": true,
       "runPhase": "now",
-      "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, documentation. Verification is required. Run the required verification commands now against the generated SDK output.",
+      "summary": "Detected impact areas: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown. Verification is required. Run the required verification commands now against the generated SDK output.",
       "steps": [
         {
           "id": "check",
           "title": "Unified package check",
           "required": true,
-          "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, documentation.",
+          "rationale": "Validate the generated package with the unified publish helper. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown.",
           "workingDirectory": "E:\\sdkwork-space\\sdkwork-doudizhu\\sdks\\sdkwork-doudizhu-app-sdk\\sdkwork-doudizhu-app-sdk-typescript\\generated\\server-openapi",
           "command": "node",
           "args": [
@@ -341,7 +406,7 @@
           "id": "build",
           "title": "Unified package build",
           "required": true,
-          "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, documentation.",
+          "rationale": "Run the full package build because this language uses a lighter check path than the final build. Triggered by: api-surface, models, runtime, build-metadata, publish-workflow, documentation, unknown.",
           "workingDirectory": "E:\\sdkwork-space\\sdkwork-doudizhu\\sdks\\sdkwork-doudizhu-app-sdk\\sdkwork-doudizhu-app-sdk-typescript\\generated\\server-openapi",
           "command": "node",
           "args": [
@@ -366,14 +431,42 @@
       "summary": "Changes have been applied. Run the required verification plan now.",
       "reasons": [
         "backed-up-generated-files",
-        "deleted-generated-files",
         "manual-review-required",
+        "unknown-impact",
         "verification-required"
       ]
     },
     "backedUpFiles": [
+      "bin/publish-core.mjs",
+      "bin/publish.ps1",
+      "bin/publish.sh",
+      "bin/sdk-gen.bat",
+      "bin/sdk-gen.sh",
+      "CHANGELOG.md",
+      "LICENSE",
       "package.json",
-      "sdkwork-sdk.json"
+      "README.md",
+      "sdkwork-sdk.json",
+      "src/api/base.ts",
+      "src/api/doudizhu.ts",
+      "src/api/index.ts",
+      "src/api/paths.ts",
+      "src/auth/index.ts",
+      "src/http/client.ts",
+      "src/http/index.ts",
+      "src/index.ts",
+      "src/sdk.ts",
+      "src/types/common.ts",
+      "src/types/doudizhu-match-data.ts",
+      "src/types/doudizhu-match-item.ts",
+      "src/types/doudizhu-match-list-data.ts",
+      "src/types/doudizhu-match-list-response.ts",
+      "src/types/doudizhu-match-response.ts",
+      "src/types/index.ts",
+      "src/types/page-info.ts",
+      "src/types/problem-detail.ts",
+      "src/types/sdk-work-api-response.ts",
+      "tsconfig.json"
     ],
     "preservedLegacyFiles": false
   }
