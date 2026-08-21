@@ -4,10 +4,10 @@ Deployment descriptors and packaging handoff for `sdkwork-doudizhu`.
 
 ## Supported profiles
 
-| Profile | Layout | Notes |
-| --- | --- | --- |
-| `standalone` | unified-process | Local browser + API server on one host |
-| `cloud` | container | API server container with PostgreSQL |
+| Profile id | Notes |
+| --- | --- |
+| `standalone.development` / `standalone.production` | Local browser + API server on one host |
+| `cloud.development` / `cloud.production` | API server container with PostgreSQL |
 
 ## Templates
 
@@ -16,8 +16,8 @@ Deployment descriptors and packaging handoff for `sdkwork-doudizhu`.
 
 ## Topology
 
-- Dev: `configs/topology/standalone.unified-process.development.env`
-- No RPC split-service deployment yet; `sdkwork-discovery` is deferred until gRPC services are introduced.
+- Dev: `etc/topology/standalone.development.env`
+- No RPC split deployment yet; `sdkwork-discovery` is deferred until gRPC services are introduced.
 
 ## Packaging
 
